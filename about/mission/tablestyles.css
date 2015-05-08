@@ -1,0 +1,141 @@
+/*
+	This styles page is used for items that need side bars and tables.
+	not every page has these styles so there is no need to link the 
+	information to all of them. 
+
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
+
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+#hours{
+	left: 85%;
+	top: 8em;
+	width: 15.75em;
+	position:absolute;
+	background-color: #6B6B6B;
+	box-shadow: 0em 0em 1em 0em black;
+}
+
+table{
+	padding-top: 4em;
+	text-align: center;
+	font-family: 'Tittilium Web', sans-serif;
+	font-size: 12pt;
+	color: #E3E3E3;
+
+	border: 2px solid #E3E3E3;
+}
+
+td{
+	margin-left: 2px;
+	border-top: 1px solid #E3E3E3;
+}
+
+th{
+	margin-left: -2px;
+	width: 50%;
+	font-size: 20pt;
+}
+
+#sidebar{
+	padding-top: 10em;
+	padding-bottom: 5em;
+
+	margin-left: -3em;
+
+	border: 2px solid #E3E3E3;
+
+	box-shadow: 0em 0em 1em 0em black;
+
+	top: 2em;
+	left: 0%;
+	position: absolute;
+	background-color:  #6B6B6B;
+	width: 15%;
+}
+
+#sidebar > ul{
+	text-decoration: none;
+}
+
+#sidebar > ul > a{
+	text-decoration: none;
+}
+
+#sidebar > ul > li{
+	display: block;
+	padding-left: .45em;
+	padding-top: .25em;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 15pt;
+	color: #E3E3E3;
+
+	cursor: pointer;
+
+	border-bottom: 2px solid #E3E3E3;
+
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	-o-transition: background-color .2s;
+	transition: background-color .2s;
+
+	-webkit-transition: padding .2s;
+	-moz-transition: padding .2s;
+	-o-transition: padding .2s;
+	transition: padding .2s;
+}
+
+#sidebar > ul > a > li{
+	display: block;
+	padding-left: .45em;
+	padding-top: .25em;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 15pt;
+	color: #E3E3E3;
+
+	cursor: pointer;
+
+	border-bottom: 2px solid #E3E3E3;
+
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	-o-transition: background-color .2s;
+	transition: background-color .2s;
+
+	-webkit-transition: padding .2s;
+	-moz-transition: padding .2s;
+	-o-transition: padding .2s;
+	transition: padding .2s;
+}
+
+#sidebar > ul > li:hover{
+	background-color: rgba(255,255,255,0.5);
+	padding-left: .75em;
+}
+
+#sidebar > ul > li.first{
+	border-top: 2px solid #E3E3E3;
+}
+
+#sidebar > ul > a > li:hover{
+	background-color: rgba(255,255,255,0.5);
+	padding-left: .75em;
+}
+
+#sidebar > ul > a > li.first{
+	border-top: 2px solid #E3E3E3;
+}
+
+#sidebar > ul > a > li.survey{
+	background-color: #05F;
+}
+
+#sidebar > ul > a >li.survey:hover{
+	background-color: #27F;
+}

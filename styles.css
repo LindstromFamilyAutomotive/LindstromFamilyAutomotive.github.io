@@ -1,0 +1,133 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
+
+*{
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+body{
+
+	background-color: #141414;
+}
+
+#header{
+	z-index: 1;
+	position: relative;
+	padding-top: 7em;
+	padding-bottom: .25em;
+	width: 100%;
+	background-color: #444444;
+	box-shadow: 0em 0em 1em 0em #000000;
+}
+
+#header > img{
+	position: relative;
+	left: 65%;
+	height: 7em;
+	width: auto;
+}
+
+#nav{
+	background-color: #6B6B6B;
+}
+
+#nav > ul{
+	text-decoration: none;
+	text-align: center;
+}
+
+#nav > ul > li, #nav > ul > a > li{
+	display: inline-block;
+	height: 2em;
+	line-height: 2;	
+
+	padding-left: 3%;
+	padding-right: 3%;
+
+	border-left: 2px;
+	border-radius: 0em;
+	border-color: #EFEFEF;
+	border-style: solid;
+	
+	cursor: pointer;
+	
+	margin-left: -.15em;
+
+	color: #EFEFEF;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 20pt;
+
+	-webkit-transition: background-color .4s;
+	-moz-transition: background-color .4s;
+	-o-transition: background-color .4s;
+	 transition: background-color .4s;
+}
+
+#nav > ul > li.end, #nav > ul > a > li.end{
+	border-right: 2px solid #EFEFEF;
+}
+
+#nav > ul > li.blue:hover, #nav > ul > a > li.blue:hover{
+	background-color: rgba(0,79,255,0.65);
+}
+
+#body{
+
+	z-index: 0;
+	position: relative;
+	width: 50%;
+	min-height: 30em;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding: 5% 10%;
+	background-color: #343434;
+	box-shadow: 0em 0em 1em 0em rgba(0,0,0,0.5);
+}
+
+#body > h1, #body > p{
+	font-family: 'Titillium Web', sans-serif;
+	color: #E3E3E3;
+}
+
+#body > h1{
+	font-size: 40pt;
+}
+
+#body > p{
+	font-size: 20pt;
+}
+
+#body > a{
+	text-decoration: none;
+	text-align: center;
+}
+
+#body > a > div.button{
+	display: inline;
+	font-family: 'Titillium Web', sans-serif;
+	width: 30%;
+	font-size: 20pt;
+	color: #E3E3E3;
+	background-color: #05F;
+	padding: 1% 5%;
+	margin: 10% 5%;
+	border: 1px solid #E3E3E3;
+	margin: 1em;
+
+	box-shadow: 0em 0em .25em 0em #000000;
+}
+
+#body > a > div.button:hover{
+	background-color: #36F;
+}
+
+#footer{
+	z-index: 2;
+	position: relative;
+	height: 10em;
+	width: 100%;
+	background-color: #E3E3E3;
+
+	box-shadow: 0em 0em 1em 0em #000;
+}
