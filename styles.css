@@ -123,11 +123,72 @@ body{
 }
 
 #footer{
+	display:inline-block;
 	z-index: 2;
 	position: relative;
 	height: 10em;
-	width: 100%;
+	width: 70%;
+	padding: 0% 15%;
 	background-color: #E3E3E3;
 
 	box-shadow: 0em 0em 1em 0em #000;
+}
+
+#footer > div > p{
+	font-family: 'Titillium Web' , sans-serif, 400;
+}
+
+#advancebadge{
+	display:inline-block;
+	height: 8em;
+	width: 8em;
+	background-image: url("advancebadge.png");
+	background-size: 8em auto;
+	margin: 1em;
+	border: solid .2em black;
+	border-radius: 1em;
+}
+
+#sitemap{
+	display: block; 
+	position: absolute; 
+	top: 1em; 
+	left: 40%; 
+	height: 8em;
+	border-left: .1em;
+	border-style: solid;
+	border-color: black;
+}
+
+
+#sitemap > ul{
+	text-decoration: none;
+}
+
+#sitemap > ul > li{
+	display: block;
+}
+
+#sitemap > ul > li > a{
+	font-family: 'Titillium Web', sans-serif, 400;
+	color: #101010;
+	margin: 0em 1em;
+	font-size: 12pt;
+
+	-webkit-transition: color .4s;
+	-moz-transition: color .4s;
+	-o-transition: color .4s;
+	 transition: color .4s;
+}
+
+#sitemap > ul > li > a:hover{
+	cursor: pointer;
+	color: #232323;
+}
+
+}
+
+#sitemap > ul > li > a:visited{
+	text-decoration: none;
+	color: #05F;
 }
