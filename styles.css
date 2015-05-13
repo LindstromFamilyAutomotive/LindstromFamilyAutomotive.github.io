@@ -85,41 +85,62 @@ body{
 	box-shadow: 0em 0em 1em 0em rgba(0,0,0,0.5);
 }
 
-#body > h1, #body > p{
+h1, h2, p{
 	font-family: 'Titillium Web', sans-serif;
 	color: #E3E3E3;
 }
 
-#body > h1{
+h1{
 	font-size: 40pt;
 }
 
-#body > p{
+p{
 	font-size: 20pt;
 }
 
+h2{
+	font-size: 30pt;
+}
+
 #body > a{
-	text-decoration: none;
 	text-align: center;
 }
 
-#body > a > div.button{
-	display: inline;
+a{
+	text-decoration: none;
+}
+
+#body > table tr > th, #body > table tr > td{
+	width: 50%;
+	text-decoration: none;
+}
+
+#body > table div.button{
 	font-family: 'Titillium Web', sans-serif;
-	width: 30%;
+	width: 49%;
 	font-size: 20pt;
 	color: #E3E3E3;
 	background-color: #05F;
 	padding: 1% 5%;
-	margin: 10% 5%;
 	border: 1px solid #E3E3E3;
 	margin: 1em;
 
 	box-shadow: 0em 0em .25em 0em #000000;
 }
 
-#body > a > div.button:hover{
+#body ul > li > a > div.button:hover{
 	background-color: #36F;
+}
+
+#body div.location_w{
+	margin-left: 1.5em;
+	width: 100%;
+	background-color: #E3E3E3;
+}
+
+#body div.location_w > img{
+	width: 100%;
+	height: auto;
 }
 
 #footer{
@@ -134,8 +155,11 @@ body{
 	box-shadow: 0em 0em 1em 0em #000;
 }
 
-#footer > div > p{
-	font-family: 'Titillium Web' , sans-serif, 400;
+#footer p{
+	font-family: 'Titillium Web' , sans-serif;
+	font-size: 12pt;
+
+	color: #141414;
 }
 
 #advancebadge{
@@ -145,6 +169,7 @@ body{
 	background-image: url("advancebadge.png");
 	background-size: 8em auto;
 	margin: 1em;
+	margin-bottom: 0em;
 	border: solid .2em black;
 	border-radius: 1em;
 }
@@ -160,7 +185,6 @@ body{
 	border-color: black;
 }
 
-
 #sitemap > ul{
 	text-decoration: none;
 }
@@ -170,8 +194,8 @@ body{
 }
 
 #sitemap > ul > li > a{
-	font-family: 'Titillium Web', sans-serif, 400;
-	color: #101010;
+	font-family: 'Titillium Web', sans-serif;
+	color: #141414;
 	margin: 0em 1em;
 	font-size: 12pt;
 
@@ -182,13 +206,5 @@ body{
 }
 
 #sitemap > ul > li > a:hover{
-	cursor: pointer;
-	color: #232323;
-}
-
-}
-
-#sitemap > ul > li > a:visited{
-	text-decoration: none;
-	color: #05F;
+	text-decoration: underline;
 }
