@@ -135,12 +135,8 @@ a{
 #body div.location_w{
 	margin-left: 1.5em;
 	width: 100%;
+	height: 20em;
 	background-color: #E3E3E3;
-}
-
-#body div.location_w > img{
-	width: 100%;
-	height: auto;
 }
 
 #footer{
