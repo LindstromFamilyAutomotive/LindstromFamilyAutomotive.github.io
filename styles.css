@@ -116,6 +116,7 @@ a{
 }
 
 #body > table div.button{
+	text-align: center;
 	font-family: 'Titillium Web', sans-serif;
 	width: 49%;
 	font-size: 20pt;
