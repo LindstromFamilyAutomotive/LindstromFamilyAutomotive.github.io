@@ -118,7 +118,7 @@ a{
 #body > table div.button{
 	text-align: center;
 	font-family: 'Titillium Web', sans-serif;
-	width: 49%;
+	width: 75%;
 	font-size: 20pt;
 	color: #E3E3E3;
 	background-color: #05F;
@@ -204,4 +204,48 @@ a{
 
 #sitemap > ul > li > a:hover{
 	text-decoration: underline;
+}
+
+#desktop{
+	visibility: visible;
+}
+
+#mobile{
+	visibility: hidden;
+}
+
+@media (max-width: 1474px){
+	#sitemap{
+		left: 45%; 
+	}
+}
+
+@media (max-width: 1235px){
+	#sitemap{
+		left: 50%;
+	}
+}
+
+@media (max-width: 1060px){
+	#sitemap{
+		left: 60%;
+	}
+
+	#body > table div.button{
+		width: 100%;
+	}
+}
+
+@media (max-width: 830px){
+	#sitemap{
+		left: 75%;
+	}
+
+	#desktop{
+		visibility: hidden;
+	}
+
+	#mobile{
+		visibility: visible;
+	}
 }
