@@ -23,22 +23,11 @@ body{
 	background-color: #6B6B6B;
 }
 
-#logowrap{
-	position: absolute;
-	left: 8%;
-	height: 300%;
-	margin-left: .45%;
-	background-color: #393939;
-	box-shadow: 0em 0em 1em 0em black;
-	border: 2px white;
-	border-top: 0px;
-	border-style: solid;
-	border-bottom-right-radius: 1em;
-
-}
-
-#logowrap > img{
-	height: 100%;
+#header > a > img{
+	position: relative;
+	margin: 0;
+	left: 66%;
+	height: 7em;
 	width: auto;
 	border-bottom-right-radius: 1em;
 	cursor: pointer;
