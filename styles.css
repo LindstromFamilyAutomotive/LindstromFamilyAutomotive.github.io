@@ -7,7 +7,7 @@
 }
 
 body{
-
+	overflow-x: hidden;
 	background-color: #141414;
 }
 
@@ -138,7 +138,6 @@ a{
 #body > #desktop div.location_w{
 	margin-left: 1.5em;
 	width: 100%;
-	height: 20em;
 	background-color: #E3E3E3;
 }
 
@@ -166,7 +165,7 @@ a{
 #footer{
 	display:inline-block;
 	z-index: 2;
-	position: relative;
+	position: absolute;
 	height: 10em;
 	width: 70%;
 	padding: 0% 15%;
@@ -239,19 +238,19 @@ a{
 	top: 1em;
 }
 
-@media (max-device-width: 1474px){
+@media (max-width: 1474px){
 	#sitemap{
 		left: 45%; 
 	}
 }
 
-@media (max-device-width: 1235px){
+@media (max-width: 1235px){
 	#sitemap{
 		left: 50%;
 	}
 }
 
-@media (max-device-width: 1060px){
+@media (max-width: 1061px),  handheld and (orientation: portrait){
 	#sitemap{
 		left: 60%;
 	}
@@ -283,10 +282,14 @@ a{
 	}
 }
 
-@media (max-device-width: 830px), handheld and (orientation: portrait){
+@media (max-width: 1060px){
+	#sidebar{
+		visibility: visible;
+	}
+}
+
+@media (max-width: 830px){
 	#sitemap{
 		left: 75%;
 	}
-
-
 }

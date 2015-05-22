@@ -17,6 +17,7 @@
 	left: 90.90%;
 	top: -.30em;
 	width: 15.75em;
+	z-index: 4;
 	position: absolute;
 	background-color: #6B6B6B;
 	box-shadow: 0em 0em 1em 0em black;
@@ -68,7 +69,7 @@ th{
 	text-decoration: none;
 }
 
-#sidebar > ul > li{
+#sidebar > ul > a > li, #sidebar > ul > li{
 	display: block;
 	padding-left: .55em;
 	padding-top: .25em;
@@ -91,45 +92,27 @@ th{
 	transition: padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
 }
 
-#sidebar > ul > a > li{
-	display: block;
-	padding-left: .55em;
-	padding-top: .25em;
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 15pt;
-	color: #E3E3E3;
-
-	cursor: pointer;
-
-	border-bottom: 2px solid #E3E3E3;
-
-	-webkit-transition: background-color .2s;
-	-moz-transition: background-color .2s;
-	-o-transition: background-color .2s;
-	transition: background-color .2s;
-
-	-webkit-transition: padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-	-moz-transition: padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-	-o-transition: padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-	transition: padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-}
-
-#sidebar > ul > li:hover{
-	background-color: rgba(255,255,255,0.5);
-	padding-left: .85em;
-}
-
-#sidebar > ul > li.first{
+#sidebar > ul > li.first, #sidebar > ul > a > li.first{
 	border-top: 2px solid #E3E3E3;
 }
 
-#sidebar > ul > a > li:hover{
-	background-color: rgba(255,255,255,0.5);
-	padding-left: .85em;
+#sidebar div{
+	height: 2.1em; 
+	margin-left: 2.3em;
+	position: relative;
+	top: .1em;
 }
 
-#sidebar > ul > a > li.first{
-	border-top: 2px solid #E3E3E3;
+#sidebar img{
+	float: left;
+	height:2em; 
+	width: auto;
+}
+@media (min-width: 1061px){
+	#sidebar > ul > a > li:hover, #sidebar > ul > li:hover{
+		background-color: rgba(255,255,255,0.5);
+		padding-left: .85em;
+	}
 }
 
 #sidebar > ul li.survey{
@@ -140,8 +123,32 @@ th{
 	background-color: #27F;
 }
 
-@media (max-device-width: 1060px){
+@media (max-width: 1060px), handheld and (orientation: portrait){
 	#hours{
-		left: 80%;
+		position: absolute;
+		left: 72.5%;
+	}
+
+	#sidebar{
+		left: 4em;
+		width: 3.5em;
+		visibility: visible;
+	}
+
+	#sidebar img{
+		visibility: visible;
+	}
+
+	#sidebar > ul > a > li, #sidebar > ul > li{
+		-webkit-transition: background-color .2s;
+		-moz-transition: background-color .2s;
+		-o-transition: background-color .2s;
+		transition: background-color .2s;
+	}
+	#sidebar > ul > a > li:hover, #sidebar > ul > li:hover{
+		background-color: rgba(255,255,255,0.5);
+	}
+	#sidebar div{
+		visibility: hidden;
 	}
 }
