@@ -137,7 +137,8 @@ a{
 
 #body > #desktop div.location_w{
 	margin-left: 1.5em;
-	width: 100%;
+	width: 21.5em;
+	height: 20em;
 	background-color: #E3E3E3;
 }
 
@@ -275,16 +276,6 @@ a{
 
 	#body > #mobile > div.location_w{
 		height: 50em;
-	}
-
-	#sidebar{
-		visibility: hidden;
-	}
-}
-
-@media (max-width: 1060px){
-	#sidebar{
-		visibility: visible;
 	}
 }
 
