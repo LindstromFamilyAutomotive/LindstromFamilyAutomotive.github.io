@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src = "scripts.js"></script>
+		<script>
+		  $(function() {
+			$('a[href*="#"]:not([href="#"])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+						if (target.length) {
+							$('html, body').animate({scrollTop: target.offset().top }, 500);
+			         		return false;
+			       		}
+			      	}
+			    });
+			});
+		</script>
+	</head>
+	<body onload = "initialize();">
+		<div id = "container">
+			<header>
+				<nav>
+					<ul>
+						<a href="index.html#home">
+							<li>
+								HOME
+							</li>
+						</a>
+						|
+						<a href="index.html#about">
+							<li>
+								ABOUT
+							</li>
+						</a>
+						|
+						<a href ="index.html#top">
+							<li style = "padding: 0 0 0 0; height: 2em;">
+								<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;">
+							</li>
+						</a>
+						|
+						<a href="index.html#contact">
+							<li>
+								CONTACT US
+							</li>
+						</a>
+						|
+						<a href="index.html#services">
+							<li>
+								SERVICES
+							</li>
+						</a>
+					</ul>
+				</nav>
+			</header>
+			<div id = "top">
+				<div class = "headingWrapper">
+				</div>
+				<div id = "scroller1" class = "scrollImgContainer">
+					<img src = "./images/slider1.png" class = "a1">
+					<img src = "./images/slider2.png" class = "a2">
+					<img src = "./images/slider3.png" class = "a3">
+					<img src = "./images/slider4.png" class = "a4">
+					<img src = "./images/slider5.png" class = "a5">
+				</div>
+			</div>
+			<div id = "home">
+				<div class = "textContent">
+					<h1> Welcome to The Shop 
+					<hr style = "border: 2px inset #555; margin: 5% 0;">
+					</h1>
+
+					<div class = "colWidth2" style = "float: left; padding-right: 1%;">
+						<p>
+							Lindstrom Family Automotive is a family owned full service repair shop.
+							We specialize in domestic and japanese import repair, and our technicians 
+							have over forty years combined experience.
+						</p>
+						<br>
+						<p>
+						Our facility is conveniently located on Morganton Rd. between William Blount 
+						Drive and Foothills Mall Drive.
+						</p>
+						
+					</div>
+					<div class = "colWidth2" style = "float:left; height: 22.25em;">
+						<iframe src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7245380156246!2d-84.02368130059865!3d35.732992560849794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe99c0e340ffa4854!2sLindstrom+Family+Automotive!5e0!3m2!1sen!2sus!4v1431548753857" frameborder = "0" style = "width: 100%; height: 100%;">
+						</iframe>
+					</div>
+					<br style = "clear: both;">
+					<hr style = "border: 2px inset #555; margin: 5% 0;">
+				</div>
+			</div>
+			<div id = "about">
+				<div class = "textContent">
+					<h1> Our Mission </h1>
+					<hr style = "border: 2px inset #555; margin: 5% 0;">					
+					<p class = "sColumn1 colWidth2">
+						At LFA, we work to provide services at affordable prices.
+						Our shop has state of the art diagnostic equipment used to 
+						provide an accurate analysis of your vehicle.
+					</p>
+					<br>
+					<p class = "sColumn3 colWidth2">
+						We also partner with local parts suppliers to quickly provide
+						quality repairs.
+					</p>
+					<hr style = "border: 2px inset #555; margin: 5% 0;">
+				</div>
+			</div>
+			<div id = "contact">
+				<div class = "textContent">
+					<h1 style = "margin: 0 0 5% 0;"> Let's Get In Touch</h1>
+					<div class = "colWidth2" style = "float: left; padding: 0 2.5%; border-right: 4px groove #555;">
+						<p>
+							Phone calls are the most direct way to reach us during business 
+							hours, however email is also checked daily as well. All work is 
+							scheduled by appointment only.
+						</p>
+						<br>
+						<p>
+							Let us know how we did. Our survey only takes a few seconds 
+							and helps us improve your customer experience.
+						</p>
+					</div>
+					<div class = "" style = "float: left;">
+						<table>
+							<tbody>
+								<tr>
+									<th> Sunday </th>
+									<td> CLOSED </td>
+								</tr>
+								<tr>
+									<th> Monday </th>
+									<td> 9am - 5pm </td>
+								</tr>
+								<tr>	
+									<th> Tuesday </th>
+									<td> 9am - 5pm </td>
+								</tr>
+									<th> Wednesday</th>
+									<td> 9am - 5pm </td>
+								<tr>	
+									<th> Thursday </th>
+									<td> 9am - 5pm </td>
+								</tr>
+								<tr>	
+									<th> Friday </th>
+									<td> 9am - 5pm </td>
+								</tr>
+								<tr>	
+									<th> Saturday </th>
+									<td> CLOSED </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--
+					<div class = "" style = "float: left;">
+						<ul style = "list-style: none;">
+							<li>
+								<a href = "https://www.facebook.com/lindstromfamilyauto/" target = "_blank">
+									<div style = "margin: .75em; width: 3em; height: 3em; border: .25em solid white; border-radius: 100%; background-color: #3B5998;">
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href = "https://plus.google.com/109334063156795594930" target = "_blank">
+									<div style = "margin: .75em; width: 3em; height: 3em; border: .25em solid #dd4b39; border-radius: 100%; background-color: white;">
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href = "mailto:lindstromfamilyautomotive@gmail.com">
+									<div style = "margin: .75em; width: 3em; height: 3em; border: .25em solid #222; border-radius: 100%; background-color: #FF9;">
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					-->
+					<br style = "clear: both">
+				</div>
+			</div>
+			<div id = "services">
+				<div class = "headingWrapper">
+				<h1> SERVICES </h1>
+				</div>
+				<div id = "servicesNav">
+					<ul>
+						<li onclick="serviceScroll(1);">
+							Oil Changes
+						</li>
+						|
+						<li onclick="serviceScroll(3);">
+							Preventative Maintenance
+						</li>
+						|
+						<li onclick="serviceScroll(5);">
+							Brakes
+						</li>
+						|
+						<li onclick="serviceScroll(7);">
+							Steering and Suspension
+						</li>
+						|
+						<li onclick="serviceScroll(9);">
+							Emissions
+						</li>
+						|
+						<li onclick="serviceScroll(11);">
+							Charging System
+						</li>
+						|
+						<li onclick="serviceScroll(13);">
+							Air Conditioning
+						</li>
+					</ul>
+				</div>
+				<div id = "servicesScrollContainer">
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Oil Changes </h2>
+							<ul>
+								<li>
+									Oil changes are a simple and effective way 
+									to extend the life of your vehicle.
+								</li>
+								<li>
+									We recommend oil changes every 3,000 miles.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Preventative Maintenance </h2>
+							<ul>
+								<li>
+									Each vehicle has specific maintenance 
+									needs outlined by the owner's manual. 
+									Performing proper maintenance will prevent 
+									internal engine problems and costly repairs later.
+								</li>
+								<li>
+									If you have any questions about your vehicle's
+									maintenance needs please <a href = "index.html#contact" style = "color: #0088FF;">contact</a> us.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Brakes </h2>
+							<ul>
+								<li>
+									The only thing as important as making your car go, is making it stop
+									The braking system is made up of hydraulic and friction parts that wear over time.
+								</li>
+								<li>
+									<a href = "index.html#contact" style = "color: #0088FF;">Contact</a> us for up to date pricing and more information about brake jobs.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Steering and Suspension </h2>
+							<ul>
+								<li>
+									The steering and suspension systems of your vehicle are closely related.
+									These parts, which include ball joints, shocks, struts, and tie rod ends,
+									all wear over time due to every day travel.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Emissions </h2>
+							<ul>
+								<li>
+									The emissions system controls the amount of air
+									brought into the vehicle, and monitors the amount
+									of fuel burned through various sensors.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Charging System </h2>
+							<ul>
+								<li>
+									The charging system is comprised of the battery and 
+									alternator.
+								</li>
+								<li>
+									Failure of any part in this system could cause poor
+									starting and running conditions.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Air Conditioning </h2>
+							<ul>
+								<li>
+									The air conditioning system is nescessary for the comfort
+									 of the passengers. Routine service of the A/C system
+									 will allow for a comfortable driving environment year
+									 round.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+			</footer>
+		</div>
+	</body>
+</html>
