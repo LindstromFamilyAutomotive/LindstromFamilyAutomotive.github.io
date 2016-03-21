@@ -48,7 +48,7 @@ header > nav > ul{
 	font-family: 'Titillium Web';
 	font-weight: 400;
 	line-height: 2;
-	color: #EEE;
+	color: #FFF;
 }
 
 header > nav > ul > a > li{
@@ -67,8 +67,8 @@ header > nav > ul > a > li:hover{
 
 .headingWrapper{
 	padding: 4em 15% 2em 15%;
-	background-color: #FFF;
-	color: #333;
+	background-color: #EEE;
+	color: #444;
 	font-family: 'Titillium Web';
 	font-weight: 400;
 }
@@ -87,22 +87,22 @@ header > nav > ul > a > li:hover{
 }
 
 #home{
-	background-color: #444;
+	background-color: #EEE;
 	min-height: 100vh;
 }
 
 #about{
-	background-color: #444;
+	background-color: #EEE;
 	min-height: 100vh;
 }
 
 #contact{
-	background-color: #444;
+	background-color: #EEE;
 	min-height: 100vh;
 }
 
 #services{
-	background-color: #444;
+	background-color: #EEE;
 	min-height: 100vh;
 }
 
@@ -168,20 +168,20 @@ header > nav > ul > a > li:hover{
 }
 
 table{
-	text-align: left;
 	font-family: 'Droid Serif';
-	font-size:  24pt;
 }
 
 table th{
-	padding: 0 2em;
+	padding: 0 .1em;
 	font-family: 'Titillium Web';
-	font-size: 24pt;
-	text-align: right;
+}
+
+table td{
+	padding: 0 .1em;
 }
 
 .textContent{
-	color: #EEE;
+	color: #444;
 	padding: 5% 15%;
 }
 
