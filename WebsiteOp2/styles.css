@@ -171,12 +171,17 @@ table{
 	font-family: 'Droid Serif';
 }
 
-table th{
-	padding: 0 .4em;
+table > tbody > tr > th{
 	font-family: 'Titillium Web';
 }
 
-table td{
+table > tbody > tr > th:nth-child(1), 
+table > tbody > tr > td:nth-child(1){
+	padding: 0;
+}
+
+table > tbody > tr > td,
+table > tbody > tr > th{
 	padding: 0 .4em;
 }
 
