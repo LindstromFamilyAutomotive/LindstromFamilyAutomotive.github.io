@@ -184,6 +184,49 @@ table > tbody > tr > td,
 table > tbody > tr > th{
 	padding: 0 .4em;
 }
+.contactButton{
+	z-index: 2;
+	margin: .75em; 
+	width: 3em; 
+	height: 3em; 
+	border: .25em solid; 
+	border-radius: 3em; 
+	background-color: #FFF;
+
+	transition: width .2s .05s;
+}
+
+a:hover .contactButton{
+	width: 12em;
+	transition: width .2s;
+}
+
+.contactText{
+	z-index: 0;
+	position: relative;
+	left: -2.5em;
+	top: -3.7em;
+	-webkit-transition: left .2s;
+	transition: left .2s .08s;
+}
+
+.contactText > p{
+	opacity: 0;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s .01s;
+}
+
+a:hover .contactText{
+	left: 5em;
+	-webkit-transition: left .2s;
+	transition: left .2s .05s;
+}
+
+a:hover .contactText > p{
+	opacity: 1;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s .1s;
+}
 
 .textContent{
 	color: #444;

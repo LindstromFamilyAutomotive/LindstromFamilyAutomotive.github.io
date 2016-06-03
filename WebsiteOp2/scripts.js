@@ -23,7 +23,7 @@ function resizeScroller(){
 	scroller.style.left = topElement.clientX + "px";
 	scroller.style.width = topElement.clientWidth + "px";
 	scroller.style.height = scroller.childNodes[1].offsetHeight + "px";
-	scroller.style.clip = "rect(" + 0 + "px, " + topElement.clientWidth + "px, " + topElement.clientHeight + "px, " + 0 + "px)";
+	//scroller.style.clip = "rect(" + 0 + "px, " + topElement.clientWidth + "px, " + topElement.clientHeight + "px, " + 0 + "px)";
 	scroller.style.position = "relative"; 
 }
 
