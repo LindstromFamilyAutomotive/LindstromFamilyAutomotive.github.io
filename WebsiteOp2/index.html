@@ -24,7 +24,7 @@
 
 			#container{
 				width: 100%;
-				margin: 0 0%;
+				margin: 0 0;
 			}
 
 			.currentPage{
@@ -71,12 +71,21 @@
 			}
 
 			.headingWrapper{
-				padding: 4em 15% 2em 15%;
-				background-color: #EEE;
-				color: #444;
+				width: 100%;
+				background-color: #444;
+				color: #FFF;
+				padding: 5% 0 0 0;
 				font-family: 'Titillium Web';
+				font-weight: bold;
+			}
+
+			.headingWrapper h1{
+				text-align: center;
+				font-family: 'Titillium Web';
+				font-size: 48pt;
 				font-weight: 400;
 			}
+
 
 			.scrollImgContainer{
 				position: absolute;
@@ -234,15 +243,8 @@
 			}
 
 			.textContent{
-				color: #444;
-				padding: 5% 15%;
-			}
-
-			.textContent > h1{
-				text-align: center;
-				font-family: 'Titillium Web';
-				font-size: 48pt;
-				font-weight: 400;
+				color: #333;
+				padding: 0 15%;
 			}
 
 			.textContent p{
@@ -365,8 +367,6 @@
 				</nav>
 			</header>
 			<div id = "top">
-				<!--<div class = "headingWrapper">
-				</div>-->
 				<div id = "scroller1" class = "scrollImgContainer">
 					<img src = "./images/slider1.jpg" class = "a1">
 					<img src = "./images/slider2.jpg" class = "a2">
@@ -376,10 +376,12 @@
 				</div>
 			</div>
 			<div id = "home">
-				<div class = "textContent">
+				<div class = "headingWrapper">
 					<h1> Welcome to The Shop 
-					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 					</h1>
+				</div>
+				<div class = "textContent">
 					<div class = "colWidth2" style = "float: left; padding-right: 1%;">
 						<p>
 							Lindstrom Family Automotive is a family owned full service repair shop.
@@ -429,13 +431,17 @@
 						</iframe>
 					</div>
 					<br style = "clear: both;">
-					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+					<hr style = "border: 2px inset #FFF; margin: 2.5% 0 0 0;">
 				</div>
 			</div>
 			<div id = "about">
+				<div class = "headingWrapper">
+					<h1> Our Mission
+						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+					</h1>				
+				</div>
 				<div class = "textContent">
-					<h1> Our Mission </h1>
-					<hr style = "border: 2px inset #FFF; margin: 5% 0;">					
+					<hr style = "border: 2px inset #FFF; margin: 5% 0 4% 0;">
 					<p class = "sColumn1 colWidth2">
 						At LFA, we work to provide services at affordable prices.
 						Our shop has state of the art diagnostic equipment used to 
@@ -446,13 +452,17 @@
 						We also partner with local parts suppliers to quickly provide
 						quality repairs.
 					</p>
-					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+					<hr style = "border: 2px inset #FFF; margin: 5% 0 0 0;">
 				</div>
 			</div>
 			<div id = "contact">
+				<div class = "headingWrapper">
+				<h1 style = "margin: 0 0 5% 0;"> Let's Get In Touch
+					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+				</h1>
+				</div>
 				<div class = "textContent">
-					<h1 style = "margin: 0 0 5% 0;"> Let's Get In Touch</h1>
-					<div class = "colWidth2" style = "float: left; padding: 0 2.5%; border-right: 4px groove #FFF;">
+					<div class = "colWidth2" style = "float: left; padding: 0 2.5%; border-right: 4px groove #FFF; height: 19em;">
 						<p>
 							Phone calls are the most direct way to reach us during business 
 							hours, however email is also checked daily as well. All work is 
@@ -514,7 +524,9 @@
 			</div>
 			<div id = "services">
 				<div class = "headingWrapper">
-				<h1> SERVICES </h1>
+				<h1> SERVICES 
+				<hr style = "border: 2px inset #FFF; margin: 0 0 0 0;">
+				</h1>
 				</div>
 				<div id = "servicesNav">
 					<ul>
