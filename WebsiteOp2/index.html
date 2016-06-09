@@ -5,6 +5,87 @@
 		<style>
 			@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 			@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+			@keyframes scrollpos_1{
+			  0% {left: -115.5%; z-index: 0;}
+			  15% {left: -49.5%; z-index: 1;}
+			  20% {left: -49.5%; z-index: 1;}
+			  35% {left: 16.5%;  z-index: 2;}
+			  40% {left: 16.5%;  z-index: 2;}
+			  55% {left: 82.5%; z-index: 1;}
+			  60% {left: 82.5%; z-index: 1;}
+			  75% {left: 148.5%; z-index: 0;}
+			  80% {left: 148.5%; z-index: 0;}
+			  95% {left: -115.5%; z-index: 0;}
+			  100% {left: -115.5%; z-index: 0;}
+			}
+			@keyframes scrollpos_2{
+			  0% {left: -49.5%; z-index: 1;}
+			  15% {left: 16.5%; z-index: 2;}
+			  20% {left: 16.5%; z-index: 2;}
+			  35% {left: 82.5%; z-index: 1;}
+			  40% {left: 82.5%; z-index: 1;}
+			  55% {left: 148.5%; z-index: 0;}
+			  60% {left: 148.5%; z-index: 0;}
+			  75% {left: -115.5%; z-index: 0;}
+			  80% {left: -115.5%; z-index: 0;}
+			  95% {left: -49.5%; z-index: 1;}
+			  100% {left: -49.5%; z-index: 1;}
+			}
+			@keyframes scrollpos_3{
+			  0% {left: 16.5%; z-index: 2;}
+			  15% {left: 82.5%; z-index: 1;}
+			  20% {left: 82.5%; z-index: 1;}
+			  35% {left: 148.5%; z-index: 0;}
+			  40% {left: 148.5%; z-index: 0;}
+			  55% {left: -115.5%; z-index: 0;}
+			  60% {left: -115.5%; z-index: 0;}
+			  75% {left: -49.5%; z-index: 1;}
+			  80% {left: -49.5%; z-index: 1;}
+			  95% {left: 16.5%; z-index: 2;}
+			  100% {left: 16.5%; z-index: 2;}
+			}
+			@keyframes scrollpos_4{
+			  0% {left: 82.5%; z-index: 1;}
+			  15% {left: 148.5%; z-index: 0;}
+			  20% {left: 148.5%; z-index: 0;}
+			  35% {left: -115.5%; z-index: 0;}
+			  40% {left: -115.5%; z-index: 0;}
+			  55% {left: -49.5%; z-index: 1;}
+			  60% {left: -49.5%; z-index: 1;}
+			  75% {left: 16.5%; z-index: 2;}
+			  80% {left: 16.5%; z-index: 2;}
+			  95% {left: 82.5%; z-index: 1;}
+			  100% {left: 82.5%; z-index: 1;}
+			}
+			@keyframes scrollpos_5{
+			  0% {left: 148.5%; z-index: 0;}
+			  15% {left: -115.5%; z-index: 0;}
+			  20% {left: -115.5%; z-index: 0;}
+			  35% {left: -49.5%; z-index: 1;}
+			  40% {left: -49.5%; z-index: 1;}
+			  55% {left: 16.5%; z-index: 2;}
+			  60% {left: 16.5%; z-index: 2;}
+			  75% {left: 82.5%; z-index: 1;}
+			  80% {left: 82.5%; z-index: 1;}
+			  95% {left: 148.5%; z-index: 0;}
+			  100% {left: 148.5%; z-index: 0;}
+			}
+
+			.scrollerContent {
+			  position: absolute;
+			  z-index: 2;
+			  width: 66%;
+			  background-color: #444;
+			  float:left;
+			  animation-duration: 30s;
+			  animation-iteration-count: infinite;
+			  animation-timing-function: cubic-bezier(.5,0,0,1);
+			}
+
+			.scrollerContent > img{
+				width: 100%;
+				height: auto;
+			}
 
 			*{	
 				border: 0px;
@@ -24,12 +105,10 @@
 
 			#container{
 				width: 100%;
-				margin: 0 0;
-			}
-
-			.currentPage{
-				background-color: #FFF;
-				color: #FF0F0F;
+				position: fixed;
+				height: 100vh;
+				margin: 0;
+				overflow-y: scroll;
 			}
 
 			header{
@@ -56,7 +135,7 @@
 				color: #FFF;
 			}
 
-			header > nav > ul > a > li{
+			header > nav > ul li{
 				font-family: 'Titillium Web';
 				font-weight: 400;
 				line-height: 2;
@@ -64,9 +143,10 @@
 				display: inline-block;
 				padding: 0em .5em;
 				vertical-align: top;
+				cursor: pointer;
 			}
 
-			header > nav > ul > a > li:hover{
+			header > nav > ul li:hover{
 				background-color: rgba(255,255,255,.5);
 			}
 
@@ -86,18 +166,17 @@
 				font-weight: 400;
 			}
 
-
-			.scrollImgContainer{
+			.scroller{
 				position: absolute;
-				text-align: center;
+				width: 100%;
+				height: 100%;
 				overflow-x: hidden;
 				overflow-y: hidden;
 			}
 
-			.scrollImgContainer > img{
-				width: 60%;
-				height: auto;
-				transition: left 1s cubic-bezier(.5,0,.5,1);
+			#top{
+				background-color: #EEE;
+				min-height: 70vh;
 			}
 
 			#home{
@@ -173,6 +252,7 @@
 				font-size: 36pt;
 				color: #EEE;
 			}
+
 			.service > ul > li{
 				font-family: 'Titillium Web';
 				font-weight: 400;
@@ -198,6 +278,7 @@
 			table > tbody > tr > th{
 				padding: 0 .4em;
 			}
+
 			.contactButton{
 				z-index: 2;
 				margin: .75em; 
@@ -251,6 +332,7 @@
 				font-size: 18pt;
 				font-family: 'Droid Serif';
 			}
+
 			.colWidth1{
 				width: 20%;
 				margin: 0 1%;
@@ -268,97 +350,59 @@
 			.colWidth4{
 				width: 100%;
 			}
-
-			.a1{
-				position: absolute;
-				left: -100%;
-				z-index: 0;
-			}
-
-			.a2{
-				position: absolute;
-				left: -40%;
-				z-index: 1;
-			}
-
-			.a3{
-				position: absolute;
-				left: 20%;
-				z-index: 1;
-			}
-
-			.a4{
-				position: absolute;
-				left: 80%;
-				z-index: 1;
-			}
-
-			.a5{
-				position: absolute;
-				left: 140%;
-				z-index: 1;
-			}
-
-			footer{
-			}
-
-			footer > ul{
-
-			}
-
-			footer > ul > li{
-
-			}
 		</style>
-		<script async src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script async type="text/javascript" src = "scripts.js"></script>
 		<script>
-		  $(function() {
-			$('a[href*="#"]:not([href="#"])').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-						if (target.length) {
-							$('html, body').animate({scrollTop: target.offset().top }, 500);
-			         		return false;
-			       		}
-			      	}
-			    });
-			});
+			function pageScroll(location, parentId){
+				var parent = document.getElementById(parentId);
+				var child = parent.childNodes[location];
+				console.log(child);
+				var speed = 30;
+				var currentState = 0;
+				var maxCalls = 100;
+				var accel = 1;
+				var parScrlTp = parent.scrollTop;
+				var scrlInt = setInterval(function(){if((currentState)/maxCalls > 1){currentState = maxCalls;} if(currentState >= maxCalls){clearInterval(scrlInt);} parent.scrollTop = lerp(parScrlTp, (child.offsetTop - parent.offsetTop), (currentState/maxCalls)); currentState += accel; accel++;}, speed);
+				//parent.scrollTop = child.offsetTop - parent.offsetTop;
+			}
+
+			function lerp(v0, v1, t)
+			{
+				return ((1-t)*v0 + t*v1);
+			}
 		</script>
 	</head>
-	<body onload = "initialize();">
+	<body>
 		<div id = "container">
 			<header>
 				<div style = "width: 100%; height: 100%; background-color: #EEE;">
 				</div>
 				<nav>	
 					<ul>
-						<a href="index.html#home">
+						<a onclick = "pageScroll(5, 'container')">
 							<li>
 								HOME
 							</li>
 						</a>
 						|
-						<a href="index.html#about">
+						<a onclick = "pageScroll(7, 'container')">
 							<li>
 								ABOUT
 							</li>
 						</a>
 						|
-						<a href ="index.html#top">
-							<li style = "padding: 0 0 0 0; height: 2em;">
+						<a onclick = "pageScroll(3, 'container')">
+							<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;">
 								<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;">
 							</li>
 						</a>
 						|
-						<a href="index.html#contact">
+						<a onclick = "pageScroll(9, 'container')">
 							<li>
 								CONTACT US
 							</li>
 						</a>
 						|
-						<a href="index.html#services">
+						<a onclick = "pageScroll(11, 'container')">
 							<li>
 								SERVICES
 							</li>
@@ -367,12 +411,22 @@
 				</nav>
 			</header>
 			<div id = "top">
-				<div id = "scroller1" class = "scrollImgContainer">
-					<img src = "./images/slider1.jpg" class = "a1">
-					<img src = "./images/slider2.jpg" class = "a2">
-					<img src = "./images/slider3.jpg" class = "a3">
-					<img src = "./images/slider4.jpg" class = "a4">
-					<img src = "./images/slider5.jpg" class = "a5">
+				<div class = "scroller">
+					<div class = "scrollerContent" style = "animation-name: scrollpos_1;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_2;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_3;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_4;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_5;">
+						<img src = "./images/slider1.jpg">
+					</div>
 				</div>
 			</div>
 			<div id = "home">
@@ -382,6 +436,7 @@
 					</h1>
 				</div>
 				<div class = "textContent">
+					<hr style = "border: 2px inset #FFF; margin: -2% 0 2.5% 0;">
 					<div class = "colWidth2" style = "float: left; padding-right: 1%;">
 						<p>
 							Lindstrom Family Automotive is a family owned full service repair shop.
@@ -523,37 +578,37 @@
 				</div>
 			</div>
 			<div id = "services">
-				<div class = "headingWrapper">
-				<h1> SERVICES 
+				<div class = "headingWrapper" style = "padding: 5% 0 1.25em 0;">
+				<h1>SERVICES 
 				</h1>
 				</div>
 				<div id = "servicesNav">
 					<ul>
-						<li onclick="serviceScroll(1);">
+						<li onclick="pageScroll(1, 'servicesScrollContainer');">
 							Oil Changes
 						</li>
 						|
-						<li onclick="serviceScroll(3);">
+						<li onclick="pageScroll(3, 'servicesScrollContainer');">
 							Preventative Maintenance
 						</li>
 						|
-						<li onclick="serviceScroll(5);">
+						<li onclick="pageScroll(5, 'servicesScrollContainer');">
 							Brakes
 						</li>
 						|
-						<li onclick="serviceScroll(7);">
+						<li onclick="pageScroll(7, 'servicesScrollContainer');">
 							Steering and Suspension
 						</li>
 						|
-						<li onclick="serviceScroll(9);">
+						<li onclick="pageScroll(9, 'servicesScrollContainer');">
 							Emissions
 						</li>
 						|
-						<li onclick="serviceScroll(11);">
+						<li onclick="pageScroll(11, 'servicesScrollContainer');">
 							Charging System
 						</li>
 						|
-						<li onclick="serviceScroll(13);">
+						<li onclick="pageScroll(13, 'servicesScrollContainer');">
 							Air Conditioning
 						</li>
 					</ul>
