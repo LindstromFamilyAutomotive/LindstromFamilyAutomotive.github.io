@@ -1,125 +1,720 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> LFA - Home</title>
-		<link rel = "stylesheet" href = "styles.css">
-		<link href = "./icon.png" type = "image/png" rel = "icon">
-		<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+			@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+			@keyframes scrollpos_1{
+			  0% {left: -115.5%; z-index: 0;}
+			  15% {left: -49.5%; z-index: 1;}
+			  20% {left: -49.5%; z-index: 1;}
+			  35% {left: 16.5%;  z-index: 2;}
+			  40% {left: 16.5%;  z-index: 2;}
+			  55% {left: 82.5%; z-index: 1;}
+			  60% {left: 82.5%; z-index: 1;}
+			  75% {left: 148.5%; z-index: 0;}
+			  80% {left: 148.5%; z-index: 0;}
+			  95% {left: -115.5%; z-index: 0;}
+			  100% {left: -115.5%; z-index: 0;}
+			}
+			@keyframes scrollpos_2{
+			  0% {left: -49.5%; z-index: 1;}
+			  15% {left: 16.5%; z-index: 2;}
+			  20% {left: 16.5%; z-index: 2;}
+			  35% {left: 82.5%; z-index: 1;}
+			  40% {left: 82.5%; z-index: 1;}
+			  55% {left: 148.5%; z-index: 0;}
+			  60% {left: 148.5%; z-index: 0;}
+			  75% {left: -115.5%; z-index: 0;}
+			  80% {left: -115.5%; z-index: 0;}
+			  95% {left: -49.5%; z-index: 1;}
+			  100% {left: -49.5%; z-index: 1;}
+			}
+			@keyframes scrollpos_3{
+			  0% {left: 16.5%; z-index: 2;}
+			  15% {left: 82.5%; z-index: 1;}
+			  20% {left: 82.5%; z-index: 1;}
+			  35% {left: 148.5%; z-index: 0;}
+			  40% {left: 148.5%; z-index: 0;}
+			  55% {left: -115.5%; z-index: 0;}
+			  60% {left: -115.5%; z-index: 0;}
+			  75% {left: -49.5%; z-index: 1;}
+			  80% {left: -49.5%; z-index: 1;}
+			  95% {left: 16.5%; z-index: 2;}
+			  100% {left: 16.5%; z-index: 2;}
+			}
+			@keyframes scrollpos_4{
+			  0% {left: 82.5%; z-index: 1;}
+			  15% {left: 148.5%; z-index: 0;}
+			  20% {left: 148.5%; z-index: 0;}
+			  35% {left: -115.5%; z-index: 0;}
+			  40% {left: -115.5%; z-index: 0;}
+			  55% {left: -49.5%; z-index: 1;}
+			  60% {left: -49.5%; z-index: 1;}
+			  75% {left: 16.5%; z-index: 2;}
+			  80% {left: 16.5%; z-index: 2;}
+			  95% {left: 82.5%; z-index: 1;}
+			  100% {left: 82.5%; z-index: 1;}
+			}
+			@keyframes scrollpos_5{
+			  0% {left: 148.5%; z-index: 0;}
+			  15% {left: -115.5%; z-index: 0;}
+			  20% {left: -115.5%; z-index: 0;}
+			  35% {left: -49.5%; z-index: 1;}
+			  40% {left: -49.5%; z-index: 1;}
+			  55% {left: 16.5%; z-index: 2;}
+			  60% {left: 16.5%; z-index: 2;}
+			  75% {left: 82.5%; z-index: 1;}
+			  80% {left: 82.5%; z-index: 1;}
+			  95% {left: 148.5%; z-index: 0;}
+			  100% {left: 148.5%; z-index: 0;}
+			}
+
+			.scrollerContent {
+			  position: absolute;
+			  z-index: 2;
+			  width: 66%;
+			  background-color: #444;
+			  float:left;
+			  animation-duration: 30s;
+			  animation-iteration-count: infinite;
+			  animation-timing-function: cubic-bezier(.5,0,0,1);
+			}
+
+			.scrollerContent > img{
+				width: 100%;
+				height: auto;
+			}
+
+			*{	
+				border: 0px;
+				margin: 0px;
+				padding: 0px;
+			}
+
+			a{
+				color: #FFF;
+				text-decoration: none;
+			}
+
+			body{
+				background-color: #1E3747;
+				overflow-x: hidden;
+			}
+
+			#container{
+				width: 100%;
+				position: fixed;
+				height: 100vh;
+				margin: 0;
+				overflow-y: scroll;
+			}
+
+			header{
+				margin: 1em 0em 0em 0em;
+				position: fixed;
+				text-align: center;
+				width: inherit;
+				z-index: 5;
+			}
+
+			header > nav{
+				background-color: #079CFC;
+				border-style: solid;
+				border-color: white;
+				border-width: .1em 0;
+				text-align: center;
+			}
+
+			header > nav > ul{
+				text-align: center;
+				height: 2em;
+				font-family: 'Titillium Web';
+				font-weight: 400;
+				line-height: 2;
+				color: #FFF;
+			}
+
+			header > nav > ul > a > li{
+				text-align: center;
+				font-family: 'Titillium Web';
+				font-weight: 400;
+				line-height: 2;
+				background-color: rgba(255,255,255,0);
+				display: inline-block;
+				padding: 0 .5em;
+				vertical-align: top;
+				cursor: pointer;
+			}
+
+			header > nav > ul li:hover{
+				background-color: rgba(255,255,255,.5);
+			}
+
+			.headingWrapper{
+				width: 100%;
+				background-color: #444;
+				color: #FFF;
+				padding: 5% 0 0 0;
+				font-family: 'Titillium Web';
+				font-weight: bold;
+			}
+
+			.headingWrapper h1{
+				text-align: center;
+				font-family: 'Titillium Web';
+				font-size: 48pt;
+				font-weight: 400;
+			}
+
+			.scroller{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+
+			#top{
+				background-color: #EEE;
+				min-height: 70vh;
+			}
+
+			#home{
+				background-color: #EEE;
+				min-height: 100vh;
+			}
+
+			#about{
+				background-color: #EEE;
+				min-height: 100vh;
+			}
+
+			#contact{
+				background-color: #EEE;
+				min-height: 100vh;
+			}
+
+			#services{
+				background-color: #EEE;
+				min-height: 100vh;
+			}
+
+			#servicesNav{
+				background-color: #079CFC;
+				border-style: solid;
+				border-color: white;
+				border-width: .1em 0em;
+				text-align: center;
+				width: inherit;
+			}
+
+			#servicesNav > ul{
+				height: 2em;
+				line-height: 2;
+				color: #EEE;
+			}
+
+			#servicesNav > ul > li > a,
+			#servicesNav > ul > li{
+				background-color: rgba(255,255,255,0);
+				color: #FFF;
+				cursor: pointer;
+				display: inline-block;
+				font-family: 'Titillium Web';
+				padding: 0em .5em;
+				vertical-align: top;
+				text-decoration: none;
+			}
+
+			#servicesNav > ul > li > a:hover,
+			#servicesNav > ul > li:hover{
+				background-color: rgba(255,255,255,.5);
+			}
+
+			#servicesScrollContainer{
+				overflow-y: hidden;
+				height: 70vh;
+				background-color: #AAA;
+			}
+
+			.service {
+				height: 100%;
+				margin: 0 12.5%;
+				padding: 0 6%;
+				background-color: #FFF;
+			}
+
+			.service > h2{
+				padding: 5% 0%;
+				text-align: center;
+				font-family: 'Titillium Web';
+				font-weight: 400;
+				font-size: 36pt;
+				color: #111;
+			}
+
+			.service > ul > li{
+				font-family: 'Titillium Web';
+				font-weight: 400;
+				font-size: 24pt;
+				color: #111;
+				margin: 1em 0em;
+			}
+
+			table{
+				font-family: 'Droid Serif';
+			}
+
+			table > tbody > tr > th{
+				font-family: 'Titillium Web';
+			}
+
+			table > tbody > tr > th:nth-child(1), 
+			table > tbody > tr > td:nth-child(1){
+				padding: 0;
+			}
+
+			table > tbody > tr > td,
+			table > tbody > tr > th{
+				padding: 0 .4em;
+			}
+
+			.contactButton{
+				z-index: 2;
+				margin: .75em; 
+				width: 3em; 
+				height: 3em; 
+				border: .25em solid; 
+				border-radius: 3em; 
+				background-color: #FFF;
+
+				transition: width .2s .05s;
+			}
+
+			a:hover .contactButton{
+				width: 12em;
+				transition: width .2s;
+			}
+
+			.contactText{
+				z-index: 0;
+				position: relative;
+				left: -2.5em;
+				top: -3.7em;
+				-webkit-transition: left .2s;
+				transition: left .2s .08s;
+			}
+
+			.contactText > p{
+				opacity: 0;
+				-webkit-transition: opacity .2s;
+				transition: opacity .2s .01s;
+			}
+
+			a:hover .contactText{
+				left: 5em;
+				-webkit-transition: left .2s;
+				transition: left .2s .05s;
+			}
+
+			a:hover .contactText > p{
+				opacity: 1;
+				-webkit-transition: opacity .2s;
+				transition: opacity .2s .1s;
+			}
+
+			.textContent{
+				color: #333;
+				padding: 0 15%;
+			}
+
+			.textContent p{
+				font-size: 18pt;
+				font-family: 'Droid Serif';
+			}
+
+			.colWidth1{
+				width: 20%;
+				margin: 0 1%;
+			}
+
+			.colWidth2{
+				width: 45%;
+				margin: 0 1%;
+			}
+
+			.colWidth3{
+				width: 75%;
+			}
+
+			.colWidth4{
+				width: 100%;
+			}
+		</style>
+		<script>
+			function pageScroll(location, parentId){
+				var parent = document.getElementById(parentId);
+				var child = parent.childNodes[location];
+				var speed = 30;
+				var currentState = 0;
+				var maxCalls = 100;
+				var accel = 1;
+				var parScrlTp = parent.scrollTop;
+				var scrlInt = setInterval(function(){if((currentState)/maxCalls > 1){currentState = maxCalls;} if(currentState >= maxCalls){clearInterval(scrlInt);} parent.scrollTop = lerp(parScrlTp, (child.offsetTop - parent.offsetTop), (currentState/maxCalls)); currentState += accel; accel++;}, speed);
+			}
+
+			function lerp(v0, v1, t)
+			{
+				return ((1-t)*v0 + t*v1);
+			}
+		</script>
 	</head>
 	<body>
-		<div id = "header">
-			<a href = "index.html">
-				<img src = "logo.png"> 
-			</a>
-			<nav>
-				<ul>
-					<li class = "blue">Home</li>
-					<a href = "about/mission/index.html">
-						<li class = "blue">About</li>
-					</a>
-					<a href = "pricing/index.html">
-						<li class = "blue" >Pricing</li>
-					</a>
-					<a href = "scheduling/index.html">
-						<li class = "blue">Scheduling</li>
-					</a>
-					<a href = "services/index.html">
-						<li class = "blue end"> Services </li>
-					</a>
-				</ul>
-			</nav>
-		</div>
-		<div id = "body">
-			<div id = "desktop"> 
-				<div class = "col3" style = "margin: 1em 0em;">
-					<h2> Welcome to the Shop </h2>
-
-					<p> Lindstrom Family Automotive is situated just two minutes outside of Maryville on Morganton road. This location allows easy access for drop off and pick up of vehicles. We pride ourselves on the quality of our work as well. We do our best to fix any problems that we are informed of, and alert you of any underlying problems. </p>
+		<div id = "container">
+			<header>
+				<div style = "width: 100%; height: 100%; background-color: #EEE;">
 				</div>
-
-				<hr style = "height: 2px; width: 100%; background-color: #343434;">
-
-				<div class = "col2">
-					<h2>Can't find us?</h2>
-
-					<p>that's ok we have <a href = "about/location/index.html">directions</a> just for you. </p>
-					<!-- Google Maps --> 
-					<a href = "about/location/index.html">
-						<div class = "col3" style = "box-shadow: 0em 0em .5em 0em #343434; margin-top: 1em;">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7245380156246!2d-84.02368130059865!3d35.732992560849794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe99c0e340ffa4854!2sLindstrom+Family+Automotive!5e0!3m2!1sen!2sus!4v1431548753857"frameborder="0" style="dragable: false; pointer-events: none;" class = "col3">
-							</iframe>
-						</div>
-					</a>
-					<!-- End Google Maps -->
-					<a href = "about/survey/index.html">
-						<div class = "button col3" style = "margin: 1em 0em;">How Did We Do?</div>
-					</a>
+				<nav>	
+					<ul>
+						<a onclick = "pageScroll(5, 'container')">
+							<li>
+								HOME
+							</li>
+						</a>
+						|
+						<a onclick = "pageScroll(7, 'container')">
+							<li>
+								ABOUT
+							</li>
+						</a>
+						|
+						<a onclick = "pageScroll(3, 'container')">
+							<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;">
+								<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;">
+							</li>
+						</a>
+						|
+						<a onclick = "pageScroll(9, 'container')">
+							<li>
+								CONTACT US
+							</li>
+						</a>
+						|
+						<a onclick = "pageScroll(11, 'container')">
+							<li>
+								SERVICES
+							</li>
+						</a>
+					</ul>
+				</nav>
+			</header>
+			<div id = "top">
+				<div class = "scroller">
+					<div class = "scrollerContent" style = "animation-name: scrollpos_1;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_2;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_3;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_4;">
+						<img src = "./images/slider1.jpg">
+					</div>
+					<div class = "scrollerContent" style = "animation-name: scrollpos_5;">
+						<img src = "./images/slider1.jpg">
+					</div>
 				</div>
 			</div>
-
-		</div>
-		<div id = "footer">
-			<ul>
-				<li class = "footerElem topalign">
-					<div>
+			<div id = "home">
+				<div class = "headingWrapper">
+					<h1> Welcome to The Shop 
+						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+					</h1>
+				</div>
+				<div class = "textContent">
+					<hr style = "border: 2px inset #FFF; margin: -2% 0 2.5% 0;">
+					<div class = "colWidth2" style = "float: left; padding-right: 1%;">
 						<p>
-						Lindstrom Family Automotive <br>
-						2526 Morganton Rd. <br>
-						Maryville, TN 37801 <br>
+							Lindstrom Family Automotive is a family owned full service repair shop.
+							We specialize in domestic and japanese import repair, and our technicians 
+							have over forty years combined experience.
 						</p>
+						<br>
+						<p>
+						Our facility is conveniently located on Morganton Rd. between William Blount 
+						Drive and Foothills Mall Drive.
+						</p>
+						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+						<table>
+							<tbody>
+								<tr>
+									<th> Sunday </th>
+									<th> Monday </th>
+									<th> Tuesday </th>
+									<th> Wednesday</th>
+									<th> Thursday </th>
+									<th> Friday </th>
+									<th> Saturday </th>
+								</tr>
+								<tr>
+									<td> CLOSED </td>
+									<td> 9am </td>
+									<td> 9am </td>
+									<td> 9am </td>
+									<td> 9am </td>
+									<td> 9am </td>
+									<td> CLOSED </td>
+								</tr>
+								<tr>
+									<td> CLOSED </td>
+									<td> 5pm </td>
+									<td> 5pm </td>
+									<td> 5pm </td>
+									<td> 5pm </td>
+									<td> 5pm </td>
+									<td> CLOSED </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class = "colWidth2" style = "float:left; height: 22.25em;">
+						<iframe src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7245380156246!2d-84.02368130059865!3d35.732992560849794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe99c0e340ffa4854!2sLindstrom+Family+Automotive!5e0!3m2!1sen!2sus!4v1431548753857" frameborder = "0" style = "width: 100%; height: 100%;">
+						</iframe>
+					</div>
+					<br style = "clear: both;">
+					<hr style = "border: 2px inset #FFF; margin: 2.5% 0 0 0;">
+				</div>
+			</div>
+			<div id = "about">
+				<div class = "headingWrapper">
+					<h1> Our Mission
+						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+					</h1>				
+				</div>
+				<div class = "textContent">
+					<hr style = "border: 2px inset #FFF; margin: 5% 0 4% 0;">
+					<p class = "sColumn1 colWidth2">
+						At LFA, we work to provide services at affordable prices.
+						Our shop has state of the art diagnostic equipment used to 
+						provide an accurate analysis of your vehicle.
+					</p>
+					<br>
+					<p class = "sColumn3 colWidth2">
+						We also partner with local parts suppliers to quickly provide
+						quality repairs.
+					</p>
+					<hr style = "border: 2px inset #FFF; margin: 5% 0 0 0;">
+				</div>
+			</div>
+			<div id = "contact">
+				<div class = "headingWrapper">
+				<h1 style = "margin: 0 0 5% 0;"> Let's Get In Touch
+					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+				</h1>
+				</div>
+				<div class = "textContent">
+					<div class = "colWidth2" style = "float: left; padding: 0 2.5%; border-right: 4px groove #FFF; height: 19em;">
+						<p>
+							Phone calls are the most direct way to reach us during business 
+							hours, however email is also checked daily as well. All work is 
+							scheduled by appointment only.
+						</p>
+						<br>
+						<p>
+							Let us know how we did. Our survey only takes a few seconds 
+							and helps us improve your customer experience.
+						</p>
+					</div>
+					<div class = "" style = "float: left;">
 						
-						<hr style = "height: .05em;background-color: #000; border-color: #000; padding-color: #000">
-
-						<p>
-						Call us at: (865) 310-1214
-						</p>
 					</div>
-				</li>
-				<li class = "footerElem topalign">
-					<div id = "likeIcons">
-						<a href = "https://www.facebook.com/lindstromfamilyauto">
-							<div id = "facebook-icon">
-							</div>
-						</a>
-						<a href = "#">
-							<div class = "likeIconsWrap">
-							<img src = "btn_google+_dark_normal_ios.png"/>
-							</div>
-						</a>
-					</div>
-				</li>
-				<li class = "footerElem topalign">
-					<div id = "sitemap">
-						<ul>
-							<li>
-							<a href = "index.html">
-							Home
-							</a>
+					
+					<div class = "" style = "float: left;">
+						<ul style = "list-style: none;">
+							<li style = "margin-top: -1em">
+								<a href = "https://www.facebook.com/lindstromfamilyauto/" target = "_blank">
+									<div class = "contactButton" style = "border-color: #3B5998;">
+									</div>
+									<span class = "contactText">
+										<p style="color: #3B5998; font-family: 'Titillium Web';"> Facebook </p>
+									</span>
+								</a>
 							</li>
-							<li>
-							<a href = "about/mission/index.html">
-							About
-							</a>
+							<li style = "margin-top: -2em">
+								<a href = "https://plus.google.com/109334063156795594930" target = "_blank">
+									<div class = "contactButton" style = "border-color: #dd4b39;">
+									</div>
+									<span class = "contactText">
+										<p style="color: #dd4b39; font-family: 'Titillium Web';"> Google+ </p>
+									</span>
+								</a>
 							</li>
-							<li>
-							<a href = "about/mission/index.html">
-							Pricing
-							</a>
+							<li style = "margin-top: -2em">
+								<a href = "mailto:lindstromfamilyautomotive@gmail.com">
+									<div class = "contactButton" style = "border-color: #222;">
+									</div>
+									<span class = "contactText">
+										<p style="color: #222; font-family: 'Titillium Web';"> E-Mail </p>
+									</span>
+								</a>
 							</li>
-							<li>
-							<a href = "about/mission/index.html">
-							Scheduling
-							</a>
-							</li>
-							<li>
-							<a href = "about/mission/index.html">
-							Services
-							</a>
+							<li style = "margin-top: -2em">
+								<a href = "http://goo.gl/forms/IF7i3ktOn36fEGAC2" target = "_blank">
+									<div class = "contactButton" style = "border-color: #079CFC">
+									</div>
+									<span class = "contactText">
+										<p style="color: #079CFC; font-family: 'Titillium Web';"> Survey </p>
+									</span>
+								</a>
 							</li>
 						</ul>
 					</div>
-				</li>
-			</ul>
+					
+					<br style = "clear: both">
+				</div>
+			</div>
+			<div id = "services">
+				<div class = "headingWrapper" style = "padding: 5% 0 1.25em 0;">
+				<h1>SERVICES 
+				</h1>
+				</div>
+				<div id = "servicesNav">
+					<ul>
+						<li onclick="pageScroll(1, 'servicesScrollContainer');">
+							Oil Changes
+						</li>
+						|
+						<li onclick="pageScroll(3, 'servicesScrollContainer');">
+							Preventative Maintenance
+						</li>
+						|
+						<li onclick="pageScroll(5, 'servicesScrollContainer');">
+							Brakes
+						</li>
+						|
+						<li onclick="pageScroll(7, 'servicesScrollContainer');">
+							Steering and Suspension
+						</li>
+						|
+						<li onclick="pageScroll(9, 'servicesScrollContainer');">
+							Emissions
+						</li>
+						|
+						<li onclick="pageScroll(11, 'servicesScrollContainer');">
+							Charging System
+						</li>
+						|
+						<li onclick="pageScroll(13, 'servicesScrollContainer');">
+							Air Conditioning
+						</li>
+					</ul>
+				</div>
+				<div id = "servicesScrollContainer">
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Oil Changes </h2>
+							<ul>
+								<li>
+									Oil changes are a simple and effective way 
+									to extend the life of your vehicle.
+								</li>
+								<li>
+									We recommend oil changes every 3,000 miles.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Preventative Maintenance </h2>
+							<ul>
+								<li>
+									Each vehicle has specific maintenance 
+									needs outlined by the owner's manual. 
+									Performing proper maintenance will prevent 
+									internal engine problems and costly repairs later.
+								</li>
+								<li>
+									If you have any questions about your vehicle's
+									maintenance needs please <a href = "index.html#contact" style = "color: #0088FF;">contact</a> us.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Brakes </h2>
+							<ul>
+								<li>
+									The only thing as important as making your car go, is making it stop
+									The braking system is made up of hydraulic and friction parts that wear over time.
+								</li>
+								<li>
+									<a href = "index.html#contact" style = "color: #0088FF;">Contact</a> us for up to date pricing and more information about brake jobs.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Steering and Suspension </h2>
+							<ul>
+								<li>
+									The steering and suspension systems of your vehicle are closely related.
+									These parts, which include ball joints, shocks, struts, and tie rod ends,
+									all wear over time due to every day travel.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Emissions </h2>
+							<ul>
+								<li>
+									The emissions system controls the amount of air
+									brought into the vehicle, and monitors the amount
+									of fuel burned through various sensors.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Charging System </h2>
+							<ul>
+								<li>
+									The charging system is comprised of the battery and 
+									alternator.
+								</li>
+								<li>
+									Failure of any part in this system could cause poor
+									starting and running conditions.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div style = "height: 100%; background-image: url('');">
+						<div class = "service">
+							<h2> Air Conditioning </h2>
+							<ul>
+								<li>
+									The air conditioning system is nescessary for the comfort
+									 of the passengers. Routine service of the A/C system
+									 will allow for a comfortable driving environment year
+									 round.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+			</footer>
 		</div>
 	</body>
 </html>

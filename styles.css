@@ -1,448 +1,304 @@
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
 
-*{
-	margin: 0;
-	border: 0;
-	padding: 0;
-}
-
-body{
-	overflow-x: hidden;
-	background-color: #9A9A9A;
-}
-
-/* header */
-
-#header{
-	z-index: 1;
-	position: relative;
-	width: 100%;
-	background-color: #9A9A9A;
-	box-shadow: 0em 0em 1em 0em #000000;
-}
-
-#header > a > img{
-	position: relative;
-	margin: 0;
-	height: 7em;
-	left: 25%;
-	width: auto;
-	border-bottom-right-radius: 1em;
-	cursor: pointer;
-	display: hidden;
-}
-
-/* nav */
-nav{
-	background-color: #EFEFEF;
-}
-
-nav > ul{
-	text-decoration: none;
-	text-align: center;
-}
-
-nav > ul > li, nav > ul > a > li{
-	display: inline-block;
-	height: 2em;
-	line-height: 2;
-
-	padding-left: 3%;
-	padding-right: 3%;
-
-	border-left: 2px;
-	border-radius: 0em;
-	border-color: #343434;
-	border-style: solid;
-	
-	cursor: pointer;
-	
-	margin-left: -.15em;
-
-	color: #343434;
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 20pt;
-
-	-webkit-transition: background-color .2s;
-	-moz-transition: background-color .2s;
-	-o-transition: background-color .2s;
-	 transition: background-color .2s, color .2s;
-}
-
-li.end{
-	border-right: 2px solid;
-}
-
-li.blue:hover, li.blue:hover{
-	background-color: rgba(0,79,255,0.65);
-	color: #EFEFEF;
-}
-/* End nav */
-/* End header*/
-
-/* body */ 
-#body{
-	z-index: 0;
-	position: relative;
-	width: 50%;
-	min-height: 30em;
-	margin-left: 15%;
-	margin-right: 15%;
-	padding: 5% 10%;
-	background-color: #E3E3E3;
-	box-shadow: 0em 0em 1em 0em rgba(0,0,0,0.5);
-}
-
-
-#body > a{
-	text-align: center;
+*{	
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 a{
+	color: #FFF;
 	text-decoration: none;
 }
 
-table tr > th, table tr > td{
-	width: 50%;
-	text-decoration: none;
+body{
+	background-color: #1E3747;
+	overflow-x: hidden;
 }
 
-.button{
-	text-align: center;
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 20pt;
-	color: #E3E3E3;
-	background-color: #05F;
-	padding: 1% 0;
-	border: 1px solid #E3E3E3;
-	-webkit-transition: background-color .2s;
-	-moz-transition: background-color .2s;
-	-o-transition: background-color .2s;
-	 transition: background-color .2s;
-}
-
-.button:hover{
-	color: #fff;
-	background-color: #16F;
-}
-
-#body p > a{
-	color: #49F;
-}
-
-#body p > a:hover{
-	color: #6BF;
-	text-decoration: underline;
-}
-/* End body */
-
-.col1{
-	width: 33.33%;
-}
-
-.col2{
-	width: 66.66%;
-}
-
-.col3{
+#container{
 	width: 100%;
+	margin: 0 0%;
 }
 
-/* footer */
-#footer{
-	z-index: 2;
-	position: relative;
-	height: 10em;
-	padding: 1% 25%;
-	background-color: #E3E3E3;
-
-	box-shadow: 0em -1em 1em -1em #000;
+.currentPage{
+	background-color: #FFF;
+	color: #FF0F0F;
 }
 
-#footer p{
-	font-family: 'Titillium Web' , sans-serif;
-	font-size: 12pt;
-	color: #343434;
+header{
+	margin: 1em 0em 0em 0em;
+	position: fixed;
+	text-align: center;
+	width: inherit;
+	z-index: 5;
 }
 
-.footerElem{
+header > nav{
+	background-color: #079CFC;
+	border-style: solid;
+	border-color: white;
+	border-width: .1em 0;
+	text-align: center;
+}
+
+header > nav > ul{
+	height: 2em;
+	font-family: 'Titillium Web';
+	font-weight: 400;
+	line-height: 2;
+	color: #FFF;
+}
+
+header > nav > ul > a > li{
+	font-family: 'Titillium Web';
+	font-weight: 400;
+	line-height: 2;
+	background-color: rgba(255,255,255,0);
 	display: inline-block;
-	margin: 0px .75%;
-}
-
-.topalign{
+	padding: 0em .5em;
 	vertical-align: top;
 }
-/* sitemap */
 
-#sitemap{ 
-	border-left: .1em;
-	border-style: solid;
-	border-color: black;
+header > nav > ul > a > li:hover{
+	background-color: rgba(255,255,255,.5);
 }
 
-#sitemap > ul{
+.headingWrapper{
+	padding: 4em 15% 2em 15%;
+	background-color: #EEE;
+	color: #444;
+	font-family: 'Titillium Web';
+	font-weight: 400;
+}
+
+.scrollImgContainer{
+	position: absolute;
+	text-align: center;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.scrollImgContainer > img{
+	width: 60%;
+	height: auto;
+	transition: left 1s cubic-bezier(.5,0,.5,1);
+}
+
+#home{
+	background-color: #EEE;
+	min-height: 100vh;
+}
+
+#about{
+	background-color: #EEE;
+	min-height: 100vh;
+}
+
+#contact{
+	background-color: #EEE;
+	min-height: 100vh;
+}
+
+#services{
+	background-color: #EEE;
+	min-height: 100vh;
+}
+
+#servicesNav{
+	background-color: #079CFC;
+	border-style: solid;
+	border-color: white;
+	border-width: .1em 0em;
+	text-align: center;
+	width: inherit;
+}
+
+#servicesNav > ul{
+	height: 2em;
+	line-height: 2;
+	color: #EEE;
+}
+
+#servicesNav > ul > li > a,
+#servicesNav > ul > li{
+	background-color: rgba(255,255,255,0);
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Titillium Web';
+	padding: 0em .5em;
+	vertical-align: top;
 	text-decoration: none;
 }
 
-#sitemap > ul > li{
-	display: block;
+#servicesNav > ul > li > a:hover,
+#servicesNav > ul > li:hover{
+	background-color: rgba(255,255,255,.5);
 }
 
-#sitemap > ul > li > a{
-	font-family: 'Titillium Web', sans-serif;
-	color: #141414;
-	margin: 0em 1em;
-	font-size: 12pt;
+#servicesScrollContainer{
+	overflow-y: hidden;
+	height: 70vh;
+	background-color: #606060;
 }
 
-#sitemap > ul > li > a:hover{
-	text-decoration: underline;
-}
-/* End sitemap */
-/* Like Icons */
-
-#likeIcons{
+.service {
+	height: 100%;
+	margin: 0 12.5%;
+	padding: 0 6%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    %;
+	background-color: rgba(0,0,0,.25);
 }
 
-.likeIconsWrap{
-	width: 32px;
+.service > h2{
+	padding: 5% 0%;
+	text-align: center;
+	font-family: 'Titillium Web';
+	font-weight: 400;
+	font-size: 36pt;
+	color: #EEE;
 }
-
-.likeIconsWrap > img{
-	width: 100%;
-	height: auto;
-}
-
-#facebook-icon{
-	background: #259;
-	text-indent: -999em;
-	width: 25px;
-	height: 27.25px;
-	border-radius: 2px;
-	position: relative;
-	overflow: hidden;
-	border: 3.5px solid #259;
-	border-bottom: 0;
-
-  	-webkit-transition: background-color .2s, border-color .2s;
-	-moz-transition: background-color .2s, border-color .2s;
-	-o-transition: background-color .2s, border-color .2s;
-	 transition: background-color .2s, border-color .2s;
-}
-#facebook-icon::before{
-	content: "/20";
-	position: absolute;
-	width: 10px;
-	height: 22.5px;
-	bottom: -7.5px;
-	right: -9.25px;
-	border: 5px solid #eee;
-	border-radius: 6.25px;
-}
-#facebook-icon::after{
-	content: "/20";
-	position: absolute;
-	width: 13.5px;
-	top: 12.5px;
-	height: 5px;
-	background: #eee;
-	right: 1.25px;
-}
-
-#facebook-icon:hover{
-	background: #36A;
-	border-color: #36A;
-}
-
-
-/* End Like Icons*/
-/* End footer */
-
-/* text elements*/
-h1, h2, p{
-	font-family: 'Titillium Web', sans-serif;
-	color: #343434;
-}
-
-h1{
-	font-size: 40pt;
-}
-
-p{
-	font-size: 20pt;
-}
-
-h2{
-	font-size: 30pt;
-}
-/* end text elements*/
-
-
-/*
-	This styles page is used for items that need side bars and tables.
-	not every page has these styles so there is no need to link the 
-	information to all of them. 
-
-*/
-
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
-
-*{
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-
-#hours{
-	left: 90.90%;
-	top: -.30em;
-	width: 15.75em;
-	z-index: 4;
-	position: absolute;
-	background-color: #6B6B6B;
-	box-shadow: 0em 0em 1em 0em black;
+.service > ul > li{
+	font-family: 'Titillium Web';
+	font-weight: 400;
+	font-size: 24pt;
+	color: #EEE;
+	margin: 1em 0em;
 }
 
 table{
-	padding-top: 4em;
-	text-align: center;
-	font-family: 'Tittilium Web', sans-serif;
-	font-size: 12pt;
-	color: #E3E3E3;
-
-	border: 2px solid #E3E3E3;
+	font-family: 'Droid Serif';
 }
 
-td{
-	margin-left: 2px;
-	border-top: 1px solid #E3E3E3;
+table > tbody > tr > th{
+	font-family: 'Titillium Web';
 }
 
-th{
-	margin-left: -2px;
-	width: 50%;
-	font-size: 20pt;
+table > tbody > tr > th:nth-child(1), 
+table > tbody > tr > td:nth-child(1){
+	padding: 0;
 }
 
-#sidebar{
-	padding-top: 1em;
-	padding-bottom: 5em;
+table > tbody > tr > td,
+table > tbody > tr > th{
+	padding: 0 .4em;
+}
+.contactButton{
+	z-index: 2;
+	margin: .75em; 
+	width: 3em; 
+	height: 3em; 
+	border: .25em solid; 
+	border-radius: 3em; 
+	background-color: #FFF;
 
-	margin-left: -4.6em;
-
-	border: 2px solid #E3E3E3;
-
-	box-shadow: 0em 0em 1em 0em black;
-
-	top: -.20em;
-	left: 0%;
-	position: absolute;
-	background-color:  #6B6B6B;
-	width: 11em;
+	transition: width .2s .05s;
 }
 
-#sidebar > ul{
-	text-decoration: none;
+a:hover .contactButton{
+	width: 12em;
+	transition: width .2s;
 }
 
-#sidebar > ul > a{
-	text-decoration: none;
-}
-
-#sidebar > ul > a > li, #sidebar > ul > li{
-	display: block;
-	padding-left: .55em;
-	padding-top: .25em;
-	font-family: 'Titillium Web', sans-serif;
-	font-size: 15pt;
-	color: #E3E3E3;
-
-	cursor: pointer;
-
-	border-bottom: 2px solid #E3E3E3;
-
-	-webkit-transition: background-color .2s, padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-	-moz-transition: background-color .2s, padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-	-o-transition: background-color .2s, padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-	transition: background-color .2s, padding .2s cubic-bezier(0.335, 1.650, 0.330, 1.650);
-}
-
-#sidebar > ul > li.first, #sidebar > ul > a > li.first{
-	border-top: 2px solid #E3E3E3;
-}
-
-#sidebar div{
-	height: 2.3em; 
-	margin-left: 2.4em;
+.contactText{
+	z-index: 0;
 	position: relative;
-	top: .1em;
-	font-size: 13pt;
+	left: -2.5em;
+	top: -3.7em;
+	-webkit-transition: left .2s;
+	transition: left .2s .08s;
 }
 
-#sidebar img{
-	float: left;
-	height:2em; 
-	width: auto;
+.contactText > p{
+	opacity: 0;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s .01s;
 }
 
-#sidebar > ul li.survey{
-	background-color: #05F;
+a:hover .contactText{
+	left: 5em;
+	-webkit-transition: left .2s;
+	transition: left .2s .05s;
 }
 
-#sidebar > ul li.survey:hover{
-	background-color: #27F;
+a:hover .contactText > p{
+	opacity: 1;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s .1s;
 }
 
-@media (min-width: 1061px){
-	#sidebar > ul > a > li:hover, #sidebar > ul > li:hover{
-		background-color: rgba(255,255,255,0.5);
-		padding-left: .85em;
-	}
+.textContent{
+	color: #444;
+	padding: 5% 15%;
 }
 
-@media (max-width: 1060px), handheld and (orientation: portrait){
-	#hours{
-		position: absolute;
-		left: 72.5%;
-	}
-
-	#sidebar{
-		left: 4em;
-		width: 3.5em;
-		visibility: visible;
-	}
-
-	#sidebar img{
-		visibility: visible;
-	}
-
-	#sidebar div{
-		visibility: hidden;
-	}
+.textContent > h1{
+	text-align: center;
+	font-family: 'Titillium Web';
+	font-size: 48pt;
+	font-weight: 400;
 }
-/* media queries */
-@media (max-width: 1061px),  handheld and (orientation: portrait){
-	#sitemap{
-		left: 60%;
-	}
 
-	#body > table div.button{
-		width: 100%;
-	}
+.textContent p{
+	font-size: 18pt;
+	font-family: 'Droid Serif';
+}
+.colWidth1{
+	width: 20%;
+	margin: 0 1%;
+}
 
-	#desktop{
-		padding: 0em 1em;
-	}
+.colWidth2{
+	width: 45%;
+	margin: 0 1%;
+}
 
-	#footer{
-		padding: 1% 3%;
-	}
+.colWidth3{
+	width: 75%;
+}
 
-	#body{
-		width: 100%;
-		height: 77em;
-		margin: 0;
-		padding: .1em 0em;
-	}
+.colWidth4{
+	width: 100%;
+}
+
+.a1{
+	position: absolute;
+	left: -100%;
+	z-index: 0;
+}
+
+.a2{
+	position: absolute;
+	left: -40%;
+	z-index: 1;
+}
+
+.a3{
+	position: absolute;
+	left: 20%;
+	z-index: 1;
+}
+
+.a4{
+	position: absolute;
+	left: 80%;
+	z-index: 1;
+}
+
+.a5{
+	position: absolute;
+	left: 140%;
+	z-index: 1;
+}
+
+footer{
+}
+
+footer > ul{
+
+}
+
+footer > ul > li{
+
 }
