@@ -71,6 +71,28 @@
 			  100% {left: 148.5%; z-index: 0;}
 			}
 
+			#mobile{
+				text-align: center;
+				visibility: visible;
+				width: 75%;
+				height: 100vh;
+				background-color: #EEE;
+				position: fixed;
+				z-index: 10;
+				padding: 1em 12.5%;
+			}
+
+			#mobile > h1{
+				font-family: 'Titillium Web';
+				font-size: 40pt;
+				font-weight: bold;
+			}
+
+			#mobile > p{
+				font-family: 'Droid Serif';
+				font-size: 20pt;
+			}
+
 			.scrollerContent {
 			  position: absolute;
 			  z-index: 2;
@@ -352,6 +374,13 @@
 			.colWidth4{
 				width: 100%;
 			}
+
+			@media (min-width: 900px) and (max-width: 2000px){
+				#mobile{
+					visibility: hidden;
+				}
+			}
+
 		</style>
 		<script>
 			function pageScroll(location, parentId){
@@ -372,6 +401,10 @@
 		</script>
 	</head>
 	<body>
+		<div id = "mobile">
+			<h1> We're Sorry! </h1>
+			<p> our site is not currently set up for your screen size, <span style = "font-weight: bold;">but we're working on it!</span> </p>
+		</div>
 		<div id = "container">
 			<header>
 				<div style = "width: 100%; height: 100%; background-color: #EEE;">
