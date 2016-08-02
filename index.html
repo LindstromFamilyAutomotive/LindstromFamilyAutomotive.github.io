@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<Title> Lindstrom Family Auto </Title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
 			@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
@@ -104,6 +105,25 @@
 			  animation-timing-function: cubic-bezier(.5,0,0,1);
 			}
 
+			.floatClear
+			{
+				clear: both;
+			}
+
+			#top{
+				width: 100%;
+				height: 70vh;
+				background-color: #EEE;
+			}
+
+			.scroller{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+
 			.scrollerContent > img{
 				width: 100%;
 				height: auto;
@@ -190,19 +210,6 @@
 				font-weight: 400;
 			}
 
-			.scroller{
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				overflow-x: hidden;
-				overflow-y: hidden;
-			}
-
-			#top{
-				background-color: #EEE;
-				min-height: 70vh;
-			}
-
 			#home{
 				background-color: #EEE;
 				min-height: 100vh;
@@ -265,7 +272,7 @@
 				height: 100%;
 				margin: 0 12.5%;
 				padding: 0 6%;
-				background-color: #FFF;
+				background-color: #EEE;
 			}
 
 			.service > h2{
@@ -380,7 +387,6 @@
 					visibility: hidden;
 				}
 			}
-
 		</style>
 		<script>
 			function pageScroll(location, parentId){
@@ -411,31 +417,31 @@
 				</div>
 				<nav>	
 					<ul>
-						<a onclick = "pageScroll(5, 'container')">
+						<a onclick = "pageScroll(5, 'container');">
 							<li>
 								HOME
 							</li>
 						</a>
 						|
-						<a onclick = "pageScroll(7, 'container')">
+						<a onclick = "pageScroll(7, 'container');">
 							<li>
 								ABOUT
 							</li>
 						</a>
 						|
-						<a onclick = "pageScroll(3, 'container')">
+						<a onclick = "pageScroll(3, 'container');">
 							<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;">
 								<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;">
 							</li>
 						</a>
 						|
-						<a onclick = "pageScroll(9, 'container')">
+						<a onclick = "pageScroll(9, 'container');">
 							<li>
 								CONTACT US
 							</li>
 						</a>
 						|
-						<a onclick = "pageScroll(11, 'container')">
+						<a onclick = "pageScroll(11, 'container');">
 							<li>
 								SERVICES
 							</li>
@@ -449,22 +455,22 @@
 						<img src = "./images/slider1.jpg">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_2;">
-						<img src = "./images/slider1.jpg">
+						<img src = "./images/slider2.jpg">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_3;">
-						<img src = "./images/slider1.jpg">
+						<img src = "./images/slider3.jpg">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_4;">
-						<img src = "./images/slider1.jpg">
+						<img src = "./images/slider4.jpg">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_5;">
-						<img src = "./images/slider1.jpg">
+						<img src = "./images/slider5.jpg">
 					</div>
 				</div>
 			</div>
 			<div id = "home">
 				<div class = "headingWrapper">
-					<h1> Welcome to The Shop 
+					<h1> Welcome To The Shop 
 						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 					</h1>
 				</div>
@@ -531,14 +537,15 @@
 				<div class = "textContent">
 					<hr style = "border: 2px inset #FFF; margin: 5% 0 4% 0;">
 					<p class = "sColumn1 colWidth2">
-						At LFA, we work to provide services at affordable prices.
+						At LFA, we work to provide excellent services at affordable prices.
 						Our shop has state of the art diagnostic equipment used to 
 						provide an accurate analysis of your vehicle.
 					</p>
 					<br>
 					<p class = "sColumn3 colWidth2">
-						We also partner with local parts suppliers to quickly provide
-						quality repairs.
+						Our partnership with local parts suppliers allows us 
+						to get you back on the road as fast as possible, while 
+						balancing cost and quality.
 					</p>
 					<hr style = "border: 2px inset #FFF; margin: 5% 0 0 0;">
 				</div>
@@ -612,8 +619,7 @@
 			</div>
 			<div id = "services">
 				<div class = "headingWrapper" style = "padding: 5% 0 1.25em 0;">
-				<h1>SERVICES 
-				</h1>
+				<h1>Services</h1>
 				</div>
 				<div id = "servicesNav">
 					<ul>
