@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 	<head>
 		<Title> Lindstrom Family Auto </Title>
 		<link rel = "icon" href = "images/icon.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset = "UTF-8">
 		<style>
 			@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 			@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
@@ -180,7 +181,7 @@
 				color: #FFF;
 			}
 
-			header > nav > ul > a > li{
+			header > nav > ul > li{
 				text-align: center;
 				font-family: 'Titillium Web';
 				font-weight: 400;
@@ -189,14 +190,23 @@
 				display: inline-block;
 				padding: 0 .5em;
 				vertical-align: top;
-				cursor: pointer;
 				-webkit-transition: background-color .1s;
 				-moz-transition: background-color .1s;
 				-o-transition: background-color .1s;
 				transition: background-color .1s;
 			}
 
-			header > nav > ul li:hover{
+			header > nav > ul > li:nth-Child(odd){
+				cursor: pointer;
+			}
+
+			header > nav > ul > li > a{
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+
+			header > nav > ul > li:nth-Child(odd):hover{
 				background-color: rgba(255,255,255,.5);
 			}
 
@@ -219,22 +229,22 @@
 
 			#home{
 				background-color: #EEE;
-				min-height: 100vh;
+				min-height: 50rem;
 			}
 
 			#about{
 				background-color: #EEE;
-				min-height: 100vh;
+				min-height: 50rem;
 			}
 
 			#contact{
 				background-color: #EEE;
-				min-height: 100vh;
+				min-height: 50rem;
 			}
 
 			#services{
 				background-color: #EEE;
-				min-height: 100vh;
+				min-height: 5rem;
 			}
 
 			#servicesNav{
@@ -252,26 +262,32 @@
 				color: #EEE;
 			}
 
-			#servicesNav > ul > li > a,
 			#servicesNav > ul > li{
 				background-color: rgba(255,255,255,0);
 				color: #FFF;
-				cursor: pointer;
 				display: inline-block;
 				font-family: 'Titillium Web';
 				padding: 0em .5em;
 				vertical-align: top;
 				text-decoration: none;
+
+				-webkit-transition: background-color .1s;
+				-moz-transition: background-color .1s;
+				-o-transition: background-color .1s;
+				transition: background-color .1s;
 			}
 
-			#servicesNav > ul > li > a:hover,
-			#servicesNav > ul > li:hover{
+			#servicesNav > ul > li:nth-Child(odd){
+				cursor: pointer;
+			}
+
+			#servicesNav > ul > li:nth-Child(odd):hover{
 				background-color: rgba(255,255,255,.5);
 			}
 
 			#servicesScrollContainer{
 				overflow-y: hidden;
-				height: 70vh;
+				height: 34rem;
 				background-color: #AAA;
 			}
 
@@ -317,40 +333,59 @@
 				padding: 0 .4em;
 			}
 
+			.facebook{
+				background-color: #3B5998;
+			}
+
+			.google{
+				background-color: #dd4b39;
+			}
+
+			.email{
+				background-color: #222;
+			}
+
+			.survey{
+				background-color: #079CFC;
+			}
+
 			.contactButton{
 				z-index: 2;
-				margin: .75em; 
+				margin-top: -.25em;
+				margin-bottom: 2em; 
 				width: 3em; 
 				height: 3em; 
 				border: .25em solid; 
 				border-radius: 3em; 
-				background-color: #FFF;
-
-				-webkit-transition: width .2s .05s;
-				-moz-transition: width .2s .05s;
-				-o-transition: width .2s .05s;
-				transition: width .2s .05s;
+				-webkit-transition: width .2s .05s, background-color .2s .05s;
+				-moz-transition: width .2s .05s, background-color .2s .05s;
+				-o-transition: width .2s .05s, background-color .2s .05s;
+				transition: width .2s .05s, background-color .2s .05s;
 			}
 
 			a:hover .contactButton{
 				width: 12em;
-				-webkit-transition: width .2s;
-				-moz-transition: width .2s;
-				-o-transition: width .2s;
-				transition: width .2s;
+				background-color: #FFF;
+				-webkit-transition: width .2s, background-color .2s;
+				-moz-transition: width .2s, background-color .2s;
+				-o-transition: width .2s, background-color .2s;
+				transition: width .2s, background-color .2s;
 			}
 
 			.contactText{
 				z-index: 0;
 				position: relative;
-				left: -2.5em;
-				top: -3.7em;
-				-webkit-transition: left .2s;
-				-moz-transition: left .2s;
-				-o-transition: left .2s;
-				transition: left .2s .08s;
+				line-height: 1.6;
+				font-family: 'Titillium Web';
+				left: 0;
+				font-size: 20pt;
+				opacity: 0;
+				-webkit-transition: left .5s, opacity .1s;
+				-moz-transition: left .5s, opacity .1s;
+				-o-transition: left .5s, opacity .1s;
+				transition: left .5s, opacity .1s;
 			}
-
+/*
 			.contactText > p{
 				opacity: 0;
 				-webkit-transition: opacity .2s .01s;
@@ -358,21 +393,14 @@
 				-o-transition: opacity .2s .01s;
 				transition: opacity .2s .01s;
 			}
-
+*/
 			a:hover .contactText{
-				left: 5em;
-				-webkit-transition: left .2s;
-				-moz-transition: left .2s;
-				-o-transition: left .2s;
-				transition: left .2s .05s;
-			}
-
-			a:hover .contactText > p{
+				left: 2.25em;
 				opacity: 1;
-				-webkit-transition: opacity .2s;
-				-moz-transition: opacity .2s;
-				-o-transition: opacity .2s;
-				transition: opacity .2s .1s;
+				-webkit-transition: left .5s, opacity .2s .1s;
+				-moz-transition: left .5s, opacity .2s .1s;
+				-o-transition: left .5s, opacity .2s .1s;
+				transition: left .5s, opacity .2s .1s;
 			}
 
 			.textContent{
@@ -438,62 +466,71 @@
 				</div>
 				<nav>	
 					<ul>
-						<a onclick = "pageScroll(5, 'container');">
-							<li>
-								HOME
-							</li>
-						</a>
+						<li>
+							<a onclick = "pageScroll(5, 'container');">
+									HOME
+							</a>
+						</li>
+						<li>
 						|
-						<a onclick = "pageScroll(7, 'container');">
-							<li>
-								ABOUT
-							</li>
-						</a>
+						</li>
+						<li>
+							<a onclick = "pageScroll(7, 'container');">
+							ABOUT
+							</a>
+						</li>
+						<li>
 						|
-						<a onclick = "pageScroll(3, 'container');">
-							<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;">
-								<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;">
-							</li>
-						</a>
+						</li>
+						<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;">
+							<a onclick = "pageScroll(3, 'container');">
+							<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;" alt = "lfaEmblem">
+							</a>
+						</li>
+						<li>
 						|
-						<a onclick = "pageScroll(9, 'container');">
-							<li>
+						</li>
+						
+						<li>
+							<a onclick = "pageScroll(9, 'container');">
 								CONTACT US
-							</li>
-						</a>
+							</a>
+						</li>
+						<li>
 						|
-						<a onclick = "pageScroll(11, 'container');">
-							<li>
-								SERVICES
-							</li>
-						</a>
+						</li>
+						<li>
+							<a onclick = "pageScroll(11, 'container');">
+							SERVICES
+							</a>
+						</li>
 					</ul>
 				</nav>
 			</header>
 			<div id = "top">
 				<div class = "scroller">
 					<div class = "scrollerContent" style = "animation-name: scrollpos_1;">
-						<img src = "./images/slider1.jpg">
+						<img src = "./images/slider1.jpg" alt = "CarImage1">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_2;">
-						<img src = "./images/slider2.jpg">
+						<img src = "./images/slider2.jpg" alt = "CarImage2">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_3;">
-						<img src = "./images/slider3.jpg">
+						<img src = "./images/slider3.jpg" alt = "CarImage3">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_4;">
-						<img src = "./images/slider4.jpg">
+						<img src = "./images/slider4.jpg" alt = "CarImage4">
 					</div>
 					<div class = "scrollerContent" style = "animation-name: scrollpos_5;">
-						<img src = "./images/slider5.jpg">
+						<img src = "./images/slider5.jpg" alt = "CarImage5">
 					</div>
 				</div>
 			</div>
 			<div id = "home">
 				<div class = "headingWrapper">
 					<h1> Welcome To The Shop 
-						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 					</h1>
+					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 				</div>
 				<div class = "textContent">
 					<hr style = "border: 2px inset #FFF; margin: -2% 0 2.5% 0;">
@@ -542,7 +579,7 @@
 						</table>
 					</div>
 					<div class = "colWidth2" style = "float:left; height: 22.25em;">
-						<iframe src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7245380156246!2d-84.02368130059865!3d35.732992560849794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe99c0e340ffa4854!2sLindstrom+Family+Automotive!5e0!3m2!1sen!2sus!4v1431548753857" frameborder = "0" style = "width: 100%; height: 100%;">
+						<iframe src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7245380156246!2d-84.02368130059865!3d35.732992560849794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe99c0e340ffa4854!2sLindstrom+Family+Automotive!5e0!3m2!1sen!2sus!4v1431548753857" style = "width: 100%; height: 100%;">
 						</iframe>
 					</div>
 					<br style = "clear: both;">
@@ -552,8 +589,8 @@
 			<div id = "about">
 				<div class = "headingWrapper">
 					<h1> Our Mission
-						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
-					</h1>				
+					</h1>			
+					<hr style = "border: 2px inset #FFF; margin: 5% 0;">	
 				</div>
 				<div class = "textContent">
 					<hr style = "border: 2px inset #FFF; margin: 5% 0 4% 0;">
@@ -571,7 +608,7 @@
 					</p>
 					</div>
 					<div class = "colWidth2"  style = "float:left;">
-						<img src = "./images/about.jpg" style="width: 100%; height: auto;">
+						<img src = "./images/about.jpg" style="width: 100%; height: auto;" alt = "abtImage1">
 					</div>
 					<br style = "clear: both;">
 					<hr style = "border: 2px inset #FFF; margin: 5% 0 0 0;">
@@ -580,8 +617,8 @@
 			<div id = "contact">
 				<div class = "headingWrapper">
 				<h1 style = "margin: 0 0 5% 0;"> Let's Get In Touch
-					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 				</h1>
+				<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 				</div>
 				<div class = "textContent">
 					<div class = "colWidth2" style = "float: left; padding: 0 2.5%; border-right: 4px groove #FFF; height: 19em;">
@@ -607,40 +644,40 @@
 					
 					<div class = "" style = "float: left;">
 						<ul style = "list-style: none;">
-							<li style = "margin-top: -1em">
+							<li>
 								<a href = "https://www.facebook.com/lindstromfamilyauto/" target = "_blank">
-									<div class = "contactButton" style = "border-color: #3B5998;">
+									<div class = "contactButton facebook" style = "border-color: #3B5998;">
+										<span class = "contactText" style = "color: #3B5998;">
+											Facebook
+										</span>
 									</div>
-									<span class = "contactText">
-										<p style="color: #3B5998; font-family: 'Titillium Web';"> Facebook </p>
-									</span>
 								</a>
 							</li>
-							<li style = "margin-top: -2em">
+							<li>
 								<a href = "https://plus.google.com/109334063156795594930" target = "_blank">
-									<div class = "contactButton" style = "border-color: #dd4b39;">
+									<div class = "contactButton google" style = "border-color: #dd4b39;">
+										<span class = "contactText" style = "color: #dd4b39;">
+											Google+
+										</span>
 									</div>
-									<span class = "contactText">
-										<p style="color: #dd4b39; font-family: 'Titillium Web';"> Google+ </p>
-									</span>
 								</a>
 							</li>
-							<li style = "margin-top: -2em">
+							<li>
 								<a href = "mailto:lindstromfamilyautomotive@gmail.com">
-									<div class = "contactButton" style = "border-color: #222;">
+									<div class = "contactButton email" style = "border-color: #222;">
+										<span class = "contactText" style = "color: #222;">
+											E-Mail
+										</span>
 									</div>
-									<span class = "contactText">
-										<p style="color: #222; font-family: 'Titillium Web';"> E-Mail </p>
-									</span>
 								</a>
 							</li>
-							<li style = "margin-top: -2em">
+							<li>
 								<a href = "http://goo.gl/forms/IF7i3ktOn36fEGAC2" target = "_blank">
-									<div class = "contactButton" style = "border-color: #079CFC">
+									<div class = "contactButton survey" style = "border-color: #079CFC;">
+										<span class = "contactText" style = "color: #079CFC;">
+											Survey
+										</span>
 									</div>
-									<span class = "contactText">
-										<p style="color: #079CFC; font-family: 'Titillium Web';"> Survey </p>
-									</span>
 								</a>
 							</li>
 						</ul>
@@ -652,33 +689,46 @@
 			<div id = "services">
 				<div class = "headingWrapper" style = "padding: 5% 0 1.25em 0;">
 				<h1>Services</h1>
+
 				</div>
 				<div id = "servicesNav">
 					<ul>
 						<li onclick="pageScroll(1, 'servicesScrollContainer');">
 							Oil Changes
 						</li>
+						<li>
 						|
+						</li>
 						<li onclick="pageScroll(3, 'servicesScrollContainer');">
 							Preventative Maintenance
 						</li>
+						<li>
 						|
+						</li>
 						<li onclick="pageScroll(5, 'servicesScrollContainer');">
 							Brakes
 						</li>
+						<li>
 						|
+						</li>
 						<li onclick="pageScroll(7, 'servicesScrollContainer');">
 							Steering and Suspension
 						</li>
+						<li>
 						|
+						</li>
 						<li onclick="pageScroll(9, 'servicesScrollContainer');">
 							Emissions
 						</li>
+						<li>
 						|
+						</li>
 						<li onclick="pageScroll(11, 'servicesScrollContainer');">
 							Charging System
 						</li>
+						<li>
 						|
+						</li>
 						<li onclick="pageScroll(13, 'servicesScrollContainer');">
 							Air Conditioning
 						</li>
@@ -711,7 +761,7 @@
 								</li>
 								<li>
 									If you have any questions about your vehicle's
-									maintenance needs please <a href = "index.html#contact" style = "color: #0088FF;">contact</a> us.
+									maintenance needs please <a onclick = "pageScroll(9, 'container');" style = "color: #0088FF; cursor: pointer;">contact</a> us.
 								</li>
 							</ul>
 						</div>
@@ -725,7 +775,7 @@
 									The braking system is made up of hydraulic and friction parts that wear over time.
 								</li>
 								<li>
-									<a href = "index.html#contact" style = "color: #0088FF;">Contact</a> us for up to date pricing and more information about brake jobs.
+									<a onclick = "pageScroll(9, 'container');" style = "color: #0088FF; cursor: pointer;">Contact</a> us for up to date pricing and more information about brake jobs.
 								</li>
 							</ul>
 						</div>
