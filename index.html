@@ -116,6 +116,7 @@
 			  width: 66%;
 			  background-color: #444;
 			  float:left;
+
 			  animation-duration: 30s;
 			  animation-iteration-count: infinite;
 			  animation-timing-function: cubic-bezier(.5,0,0,1);
@@ -190,6 +191,7 @@
 				display: inline-block;
 				padding: 0 .5em;
 				vertical-align: top;
+
 				-webkit-transition: background-color .1s;
 				-moz-transition: background-color .1s;
 				-o-transition: background-color .1s;
@@ -356,7 +358,8 @@
 				width: 3em; 
 				height: 3em; 
 				border: .25em solid; 
-				border-radius: 3em; 
+				border-radius: 3em;
+
 				-webkit-transition: width .2s .05s;
 				-moz-transition: width .2s .05s;
 				-o-transition: width .2s .05s;
@@ -365,6 +368,7 @@
 
 			a:hover .contactButton{
 				width: 12em;
+
 				-webkit-transition: width .2s;
 				-moz-transition: width .2s;
 				-o-transition: width .2s;
@@ -380,23 +384,16 @@
 				font-size: 20pt;
 				opacity: 0;
 				color: #FFF;
+
 				-webkit-transition: left .5s, opacity .1s;
 				-moz-transition: left .5s, opacity .1s;
 				-o-transition: left .5s, opacity .1s;
 				transition: left .5s, opacity .1s;
 			}
-/*
-			.contactText > p{
-				opacity: 0;
-				-webkit-transition: opacity .2s .01s;
-				-moz-transition: opacity .2s .01s;
-				-o-transition: opacity .2s .01s;
-				transition: opacity .2s .01s;
-			}
-*/
 			a:hover .contactText{
 				left: 2.25em;
 				opacity: 1;
+
 				-webkit-transition: left .5s, opacity .2s .1s;
 				-moz-transition: left .5s, opacity .2s .1s;
 				-o-transition: left .5s, opacity .2s .1s;
@@ -431,6 +428,60 @@
 				width: 100%;
 			}
 
+			footer{
+				position: fixed;
+				z-index: 4;
+				height: 27vh;
+				top: 97vh;
+				width: 100%;
+				background-color: #079CFC;
+				border-top: 2px white solid;
+				opacity: .5;
+
+				-webkit-transition: top .2s, opacity .2s;
+				-moz-transition: top .2s, opacity .2s;
+				-o-transition: top .2s, opacity .2s;
+				transition: top .2s, opacity .2s;
+			}
+
+			footer:hover{
+				top: 73vh;
+				opacity: 1;
+
+				-webkit-transition: top .2s, opacity .2s;
+				-moz-transition: top .2s, opacity .2s;
+				-o-transition: top .2s, opacity .2s;
+				transition: top .2s, opacity .2s;
+			}
+
+			footer > ul{
+				position: relative;
+				margin-top: 3vh;
+				text-align: left;
+				display: inline-block;
+				font-family: 'Titillium Web';
+				font-weight: 400;
+				line-height: 2;
+			}
+
+			footer > ul > li{
+				line-height: 1.5;
+				color: #EEE;
+				margin-right: 1em;
+				text-decoration: none;
+				display: block;
+			}
+
+			.sitemap{
+				cursor: pointer;
+				margin-bottom: .6em;
+			}
+
+			.sitemap:hover{
+				color: #fff;
+				text-decoration: underline;
+			}
+
 			@media (min-width: 900px) and (max-width: 2000px){
 				#mobile{
 					visibility: hidden;
@@ -462,29 +513,27 @@
 		</div>
 		<div id = "container">
 			<header>
-				<div style = "width: 100%; height: 100%; background-color: #EEE;">
-				</div>
 				<nav>	
 					<ul>
 						<li>
-							<a onclick = "pageScroll(5, 'container');">
-									HOME
+							<a onclick = "pageScroll(7, 'container');">
+								HOME
 							</a>
 						</li>
 						<li>
 						|
 						</li>
 						<li>
-							<a onclick = "pageScroll(7, 'container');">
-							ABOUT
+							<a onclick = "pageScroll(9, 'container');">
+								ABOUT
 							</a>
 						</li>
 						<li>
 						|
 						</li>
 						<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;">
-							<a onclick = "pageScroll(3, 'container');">
-							<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;" alt = "lfaEmblem">
+							<a onclick = "pageScroll(5, 'container');">
+								<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;" alt = "lfaEmblem">
 							</a>
 						</li>
 						<li>
@@ -492,7 +541,7 @@
 						</li>
 						
 						<li>
-							<a onclick = "pageScroll(9, 'container');">
+							<a onclick = "pageScroll(11, 'container');">
 								CONTACT US
 							</a>
 						</li>
@@ -500,13 +549,48 @@
 						|
 						</li>
 						<li>
-							<a onclick = "pageScroll(11, 'container');">
-							SERVICES
+							<a onclick = "pageScroll(13, 'container');">
+								SERVICES
 							</a>
 						</li>
 					</ul>
 				</nav>
 			</header>
+			<footer>
+				
+				<ul style="margin-left: 15.5%; border-right: 2px solid white;">
+					<li>
+						Lindstrom Family Automotive <br>
+						2526 Morganton Rd. <br>
+						Maryville TN, 37801
+						<hr style = "border: 1px solid #FFF; margin: .5em 0;">
+					</li>
+					<li>
+						E-Mail: Lindstromfamilyautomotive@gmail.com
+						<hr style = "border: 1px solid #FFF; margin: .5em 0;">
+					</li>
+					<li>
+						Phone: (865) 310-1214
+					</li>
+				</ul>
+				<ul style = "vertical-align: top; margin-left: .75em;">
+					<li onclick = "pageScroll(5, 'container');" class = "sitemap">
+						Top
+					</li>
+					<li onclick = "pageScroll(7, 'container');" class = "sitemap">
+						Home
+					</li>
+					<li onclick = "pageScroll(9, 'container');" class = "sitemap">
+						About
+					</li>
+					<li onclick = "pageScroll(11, 'container');" class = "sitemap">
+						Contact
+					</li>
+					<li onclick = "pageScroll(13, 'container');" class = "sitemap">
+						Services
+					</li>
+				</ul>
+			</footer>
 			<div id = "top">
 				<div class = "scroller">
 					<div class = "scrollerContent" style = "animation-name: scrollpos_1;">
@@ -834,8 +918,6 @@
 					</div>
 				</div>
 			</div>
-			<footer>
-			</footer>
 		</div>
 	</body>
 </html>
