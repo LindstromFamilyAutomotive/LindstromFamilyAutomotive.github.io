@@ -136,6 +136,7 @@
 				width: 100%;
 				height: 70vh;
 				background-color: #EEE;
+				display: none;
 			}
 
 
@@ -171,15 +172,29 @@
 				border-color: white;
 				border-width: .1em 0;
 				text-align: center;
+				height: 2em;
+			}
+
+			header > nav > div{
+				display: inline;
+				font-family: 'Titillium Web';
+				font-weight: 400;
+				line-height: 2;
+				color: #FFF;
 			}
 
 			header > nav > ul{
+				position: relative;
+				z-index: 0;
+				top: -10em;
+				opacity: 0;
 				text-align: center;
 				height: 2em;
 				font-family: 'Titillium Web';
 				font-weight: 400;
 				line-height: 2;
 				color: #FFF;
+				transition: top .2s;
 			}
 
 			header > nav > ul > li{
@@ -187,29 +202,25 @@
 				font-family: 'Titillium Web';
 				font-weight: 400;
 				line-height: 2;
-				background-color: rgba(255,255,255,0);
-				display: inline-block;
-				padding: 0 .5em;
-				vertical-align: top;
-
-				-webkit-transition: background-color .1s;
-				-moz-transition: background-color .1s;
-				-o-transition: background-color .1s;
-				transition: background-color .1s;
+				background-color: #079CFC;
+				border-style: solid;
+				border-color: white;
+				border-width: .1em 0;
+				text-align: center;
 			}
 
-			header > nav > ul > li:nth-Child(odd){
-				cursor: pointer;
+			header > nav:hover > ul{
+				position: relative;
+				top: 0em;
+				opacity: 1;
 			}
 
-			header > nav > ul > li > a{
-				width: 100%;
-				height: 100%;
-				display: block;
+			header > nav > ul > li:hover{
+				background-color: #189DFD;
 			}
 
-			header > nav > ul > li:nth-Child(odd):hover{
-				background-color: rgba(255,255,255,.5);
+			.transOut{
+				display: none;
 			}
 
 			.headingWrapper{
@@ -246,7 +257,8 @@
 
 			#services{
 				background-color: #EEE;
-				min-height: 100vh;
+				height: 0;
+				display: none;
 			}
 
 			#servicesNav{
@@ -355,24 +367,11 @@
 				z-index: 2;
 				margin-top: -.25em;
 				margin-bottom: 2em; 
-				width: 3em; 
+				width: 100%; 
 				height: 3em; 
 				border: .25em solid; 
 				border-radius: 3em;
-
-				-webkit-transition: width .2s .05s;
-				-moz-transition: width .2s .05s;
-				-o-transition: width .2s .05s;
-				transition: width .2s .05s;
-			}
-
-			a:hover .contactButton{
-				width: 12em;
-
-				-webkit-transition: width .2s;
-				-moz-transition: width .2s;
-				-o-transition: width .2s;
-				transition: width .2s;
+				text-align: center;
 			}
 
 			.contactText{
@@ -380,9 +379,8 @@
 				position: relative;
 				line-height: 1.6;
 				font-family: 'Titillium Web';
-				left: 0;
 				font-size: 20pt;
-				opacity: 0;
+				opacity: 1;
 				color: #FFF;
 
 				-webkit-transition: left .5s, opacity .1s;
@@ -390,19 +388,13 @@
 				-o-transition: left .5s, opacity .1s;
 				transition: left .5s, opacity .1s;
 			}
-			a:hover .contactText{
-				left: 2.25em;
-				opacity: 1;
-
-				-webkit-transition: left .5s, opacity .2s .1s;
-				-moz-transition: left .5s, opacity .2s .1s;
-				-o-transition: left .5s, opacity .2s .1s;
-				transition: left .5s, opacity .2s .1s;
-			}
 
 			.textContent{
 				color: #333;
-				padding: 0 15%;
+				padding: 0 5%;
+				display: flex;
+				flex-flow: wrap row;
+				justify-content: space-between;
 			}
 
 			.textContent p{
@@ -411,21 +403,16 @@
 			}
 
 			.colWidth1{
-				width: 20%;
-				margin: 0 1%;
+				margin: 10% 0% 0 0;
+				flex: 1 100%;
 			}
 
 			.colWidth2{
-				width: 45%;
-				margin: 0 1%;
+				flex: 1 100%;
 			}
 
 			.colWidth3{
-				width: 75%;
-			}
-
-			.colWidth4{
-				width: 100%;
+				flex: 1 100%;
 			}
 
 			footer{
@@ -482,9 +469,112 @@
 				text-decoration: underline;
 			}
 
-			@media (min-width: 900px) and (max-width: 2000px){
-				#mobile{
-					visibility: hidden;
+			@media all and (min-width: 800px)
+			{
+				.contactButton{
+					width: 3em;
+					text-align: left;
+					-webkit-transition: width .2s .05s;
+					-moz-transition: width .2s .05s;
+					-o-transition: width .2s .05s;
+					transition: width .2s .05s;
+
+				}
+
+				a:hover .contactButton{
+					width: 12em;
+
+					-webkit-transition: width .2s;
+					-moz-transition: width .2s;
+					-o-transition: width .2s;
+					transition: width .2s;
+				}
+
+				.contactText{
+					z-index: 0;
+					position: relative;
+					line-height: 1.6;
+					font-family: 'Titillium Web';
+					left: 0;
+					font-size: 20pt;
+					opacity: 0;
+					color: #FFF;
+
+					-webkit-transition: left .5s, opacity .1s;
+					-moz-transition: left .5s, opacity .1s;
+					-o-transition: left .5s, opacity .1s;
+					transition: left .5s, opacity .1s
+					}
+
+				a:hover .contactText{
+					left: 2.25em;
+					opacity: 1;
+
+					-webkit-transition: left .5s, opacity .2s .1s;
+					-moz-transition: left .5s, opacity .2s .1s;
+					-o-transition: left .5s, opacity .2s .1s;
+					transition: left .5s, opacity .2s .1s;
+				}
+
+				.colWidth1{
+					flex: 1 49%;
+					margin: 0% 1% 0 0;
+				}
+
+				#top{
+					display: inline-block;
+				}
+
+				#services{
+					height: 100vh;
+					display: inline-block;
+				}
+
+				header > nav{
+				  position: absolute;
+				  top: 0;
+				  height: 2em;
+				  width: 100%;
+				}
+				header > nav > div{
+				  display: none;
+				}
+
+				header > nav > ul {
+					top: 0em;
+					opacity: 1;
+					height: 2em;
+				}
+
+				header > nav > ul > li{
+				background-color: rgba(255,255,255,0);
+				display: inline-block;
+				padding: 0 .5em;
+				vertical-align: top;
+				border: none;
+
+				-webkit-transition: background-color .1s;
+				-moz-transition: background-color .1s;
+				-o-transition: background-color .1s;
+				transition: background-color .1s;
+				}
+
+				header > nav > ul > li:nth-Child(odd){
+					cursor: pointer;
+				}
+
+				header > nav > ul > li > a{
+					width: 100%;
+					height: 100%;
+					display: block;
+				}
+
+				header > nav > ul > li:nth-Child(odd):hover{
+					background-color: rgba(255,255,255,.25);
+				}
+
+				.transOut{
+					display: inline-block;
 				}
 			}
 		</style>
@@ -507,20 +597,19 @@
 		</script>
 	</head>
 	<body>
-		<div id = "mobile">
-			<h1> We're Sorry! </h1>
-			<p> our site is not currently set up for your screen size, <span style = "font-weight: bold;">but we're working on it!</span> </p>
-		</div>
 		<div id = "container">
 			<header>
-				<nav>	
+				<nav class = "desktop">	
+					<div>
+						MENU
+					</div>
 					<ul>
 						<li>
 							<a onclick = "pageScroll(7, 'container');">
 								HOME
 							</a>
 						</li>
-						<li>
+						<li class = "transOut">
 						|
 						</li>
 						<li>
@@ -528,15 +617,15 @@
 								ABOUT
 							</a>
 						</li>
-						<li>
+						<li class = "transOut">
 						|
 						</li>
-						<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;">
+						<li style = "padding: 0 0 0 0; margin: 0 .5em; height: 2em;" class = "transOut">
 							<a onclick = "pageScroll(5, 'container');">
 								<img src = "images/emblem.png" style = "width: 7em; height: auto; margin-top: -.75em;" alt = "lfaEmblem">
 							</a>
 						</li>
-						<li>
+						<li class = "transOut">
 						|
 						</li>
 						
@@ -545,10 +634,10 @@
 								CONTACT US
 							</a>
 						</li>
-						<li>
+						<li class = "transOut">
 						|
 						</li>
-						<li>
+						<li class = "transOut">
 							<a onclick = "pageScroll(13, 'container');">
 								SERVICES
 							</a>
@@ -617,8 +706,7 @@
 					<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 				</div>
 				<div class = "textContent">
-					<hr style = "border: 2px inset #FFF; margin: -2% 0 2.5% 0;">
-					<div class = "colWidth2" style = "float: left; padding-right: 1%;">
+					<div class = "colWidth1">
 						<p>
 							Lindstrom Family Automotive is a family owned full service repair shop.
 							We specialize in domestic and japanese import repair, and our technicians 
@@ -626,10 +714,10 @@
 						</p>
 						<br>
 						<p>
-						Our facility is conveniently located on Morganton Rd. between William Blount 
-						Drive and Foothills Mall Drive.
+							Our facility is conveniently located on Morganton Rd. between William Blount 
+							Drive and Foothills Mall Drive.
 						</p>
-						<hr style = "border: 2px inset #FFF; margin: 5% 0;">
+						<!--
 						<table>
 							<tbody>
 								<tr>
@@ -661,13 +749,13 @@
 								</tr>
 							</tbody>
 						</table>
+						-->
 					</div>
-					<div class = "colWidth2" style = "float:left; height: 22.25em;">
-						<iframe src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7245380156246!2d-84.02368130059865!3d35.732992560849794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe99c0e340ffa4854!2sLindstrom+Family+Automotive!5e0!3m2!1sen!2sus!4v1431548753857" style = "margin-left: 10%; width: 100%; height: 95%;">
+					<div class = "colWidth1" style = "height: 22.25em;">
+						<iframe src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.7245380156246!2d-84.02368130059865!3d35.732992560849794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xe99c0e340ffa4854!2sLindstrom+Family+Automotive!5e0!3m2!1sen!2sus!4v1431548753857" style = "width: 100%; height: 95%;">
 						</iframe>
 					</div>
 					<br style = "clear: both;">
-					<hr style = "border: 2px inset #FFF; margin: 2.5% 0 0 0;">
 				</div>
 			</div>
 			<div id = "about">
@@ -677,8 +765,7 @@
 					<hr style = "border: 2px inset #FFF; margin: 5% 0;">	
 				</div>
 				<div class = "textContent">
-					<hr style = "border: 2px inset #FFF; margin: 5% 0 4% 0;">
-					<div class = "colWidth2" style = "float: left; padding-right: 1%;">
+					<div class = "colWidth1">
 					<p>
 						At LFA, we work to provide excellent services at affordable prices.
 						Our shop has state of the art diagnostic equipment used to 
@@ -691,11 +778,11 @@
 						balancing cost and quality.
 					</p>
 					</div>
-					<div class = "colWidth2"  style = "float:left;">
+					<br>
+					<div class = "colWidth1">
 						<img src = "./images/about.jpg" style="width: 100%; height: auto;" alt = "abtImage1">
 					</div>
-					<br style = "clear: both;">
-					<hr style = "border: 2px inset #FFF; margin: 5% 0 0 0;">
+					<br>
 				</div>
 			</div>
 			<div id = "contact">
@@ -705,7 +792,7 @@
 				<hr style = "border: 2px inset #FFF; margin: 5% 0;">
 				</div>
 				<div class = "textContent">
-					<div class = "colWidth2" style = "float: left; padding: 0 2.5%; border-right: 4px groove #FFF; height: 19em;">
+					<div class = "colWidth1">
 						<p>
 							Phone calls are the most direct way to reach us during business 
 							hours. We check our email daily as well. All work is 
@@ -721,12 +808,8 @@
 							Let us know how we did. Our survey only takes a few seconds 
 							and helps us improve your customer experience.
 						</p>
-					</div>
-					<div class = "" style = "float: left;">
-						
-					</div>
-					
-					<div class = "" style = "float: left;">
+					</div>					
+					<div class = "colWidth1">
 						<ul style = "list-style: none;">
 							<li>
 								<a href = "https://www.facebook.com/lindstromfamilyauto/" target = "_blank">
@@ -767,7 +850,7 @@
 						</ul>
 					</div>
 					
-					<br style = "clear: both">
+					<br>
 				</div>
 			</div>
 			<div id = "services">

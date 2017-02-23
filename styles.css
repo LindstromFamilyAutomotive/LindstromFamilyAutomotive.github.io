@@ -89,21 +89,25 @@ header > nav > ul > a > li:hover{
 #home{
 	background-color: #EEE;
 	min-height: 100vh;
+	flex-flow: wrap row;
 }
 
 #about{
 	background-color: #EEE;
 	min-height: 100vh;
+	flex-flow: wrap row;
 }
 
 #contact{
 	background-color: #EEE;
 	min-height: 100vh;
+	flex-flow: wrap row;
 }
 
 #services{
 	background-color: #EEE;
 	min-height: 100vh;
+	flex-flow: wrap row;
 }
 
 #servicesNav{
@@ -231,6 +235,7 @@ a:hover .contactText > p{
 .textContent{
 	color: #444;
 	padding: 5% 15%;
+	flex-flow: wrap row;
 }
 
 .textContent > h1{
@@ -245,51 +250,15 @@ a:hover .contactText > p{
 	font-family: 'Droid Serif';
 }
 .colWidth1{
-	width: 20%;
-	margin: 0 1%;
+	flex: 1 100%;
 }
 
 .colWidth2{
-	width: 45%;
-	margin: 0 1%;
+	flex: 1 100%;
 }
 
 .colWidth3{
-	width: 75%;
-}
-
-.colWidth4{
-	width: 100%;
-}
-
-.a1{
-	position: absolute;
-	left: -100%;
-	z-index: 0;
-}
-
-.a2{
-	position: absolute;
-	left: -40%;
-	z-index: 1;
-}
-
-.a3{
-	position: absolute;
-	left: 20%;
-	z-index: 1;
-}
-
-.a4{
-	position: absolute;
-	left: 80%;
-	z-index: 1;
-}
-
-.a5{
-	position: absolute;
-	left: 140%;
-	z-index: 1;
+	flex: 1 100%;
 }
 
 footer{
@@ -301,4 +270,25 @@ footer > ul{
 
 footer > ul > li{
 
+}
+
+@media all and (min-width: 600px)
+{
+	.colWidth1{
+		flex: 1 49%;
+	}
+}
+
+@media all and (min-width: 1000px)
+{
+	.colWidth1{
+		flex: 1 auto;
+	}
+	.colWidth2{
+		flex: 2 auto;
+	}
+
+	.colWidth3{
+		flex: 3 auto;
+	}
 }
